@@ -55,7 +55,7 @@ module alu#(
             4'b1010:       //SLTU
                     ALUResult = SrcA < SrcB;
             4'b1011:       //SRA
-                    ALUResult = $signed(SrcA) >>> SrcB;
+                    ALUResult = SrcA >>> SrcB;
             default:
                     ALUResult = 'b0;
             endcase
