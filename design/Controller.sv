@@ -32,7 +32,7 @@ module Controller(
     output logic RegWrite, //The register on the Write register input is written with the value on the Write data input 
     output logic MemRead,  //Data memory contents designated by the address input are put on the Read data output
     output logic MemWrite, //Data memory contents designated by the address input are replaced by the value on the Write data input.
-    //output Branch,  //0: branch is not taken; 1: branch is taken
+    output Branch,  //0: branch is not taken; 1: branch is taken
     output logic [1:0] ALUOp
 );
 
@@ -45,12 +45,14 @@ module Controller(
     logic [6:0] R_TYPE, LW, SW, RTypeI;
     
     assign  R_TYPE = 7'b0110011;
-    assign  LW     = 7'b0000011;
-    assign  SW     = 7'b0100011;
+    assign  LW     = 7'b0000011; /*i type*/
+    assign  SW     = 7'b0100011; /*s type*/
     assign  RTypeI = 7'b0010011; //addi,ori,andi
-//	assign  BR     = 7'b1100011;
-
-
+  	assign  BR     = 7'b1100011; //B-type
+    assign  J      = 7'b1101111; /*J-type*/
+    assign  UA      = 7'b0010111; /*U-type auipc*/  
+    assign  UL      = 7'b0110111; /*U-type lui*/  
+    assign  Ii      = 7'b0010011; /*i type imm*/ 
 
 
   assign ALUSrc   = (Opcode==LW || Opcode==SW || Opcode == RTypeI);
@@ -60,6 +62,6 @@ module Controller(
   assign MemWrite = (Opcode==SW);
   assign ALUOp[0] = (Opcode==SW ||Opcode==LW);
   assign ALUOp[1] = (Opcode==RTypeI ||Opcode==LW);
-  
+  assign Branch   = (Opcode==BR)   
 
 endmodule
