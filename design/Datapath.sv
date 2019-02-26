@@ -31,7 +31,8 @@ module Datapath #(
                               // reset , sets the PC to zero
     RegWrite , MemtoReg ,     // Register file writing enable   // Memory or ALU MUX
     ALUsrc , MemWrite ,       // Register file or Immediate MUX // Memroy Writing Enable
-    MemRead ,                 // Memroy Reading Enable
+    MemRead , Branch               // Memroy Reading Enable // branch taken or not
+    , Jump                    //jal or jalr
     input logic [ ALU_CC_W -1:0] ALU_CC, // ALU Control Code ( input of the ALU )
     output logic [6:0] opcode,
     output logic [6:0] Funct7,
@@ -70,6 +71,9 @@ logic [DATA_W-1:0] ExtImm;
 //// ALU
     mux2 #(32) srcbmux(Reg2, ExtImm, ALUsrc, SrcB);
     alu alu_module(Reg1, SrcB, ALU_CC, ALUResult);
+    // and1 #(9) andb(Branch, Zero, Bresult); 
+   // adder1 newpcadd(PC,ExtImm,Sum); 
+   // mux3 #(32) pcmux(PCPlus4,Sum, ALUResult,Jump,Bresult,PCAddress); 
     
     assign WB_Data = Result;
     

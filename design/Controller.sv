@@ -32,7 +32,8 @@ module Controller(
     output logic RegWrite, //The register on the Write register input is written with the value on the Write data input 
     output logic MemRead,  //Data memory contents designated by the address input are put on the Read data output
     output logic MemWrite, //Data memory contents designated by the address input are replaced by the value on the Write data input.
-    output Branch,  //0: branch is not taken; 1: branch is taken
+    output logic Branch,  //0: branch is not taken; 1: branch is taken
+    output logic Jump,  //0: jal; 1: jalr
     output logic [1:0] ALUOp
 );
 
@@ -42,26 +43,28 @@ module Controller(
 //    localparam BR     = 7'b1100011;
 //    localparam RTypeI = 7'b0010011; //addi,ori,andi
     
-    logic [6:0] R_TYPE, LW, SW, RTypeI;
+    logic [6:0] R_TYPE, LW, SW, RTypeI,BR, J, Jr, UA, UL, Ii;
     
     assign  R_TYPE = 7'b0110011;
     assign  LW     = 7'b0000011; /*i type*/
     assign  SW     = 7'b0100011; /*s type*/
     assign  RTypeI = 7'b0010011; //addi,ori,andi
   	assign  BR     = 7'b1100011; //B-type
-    assign  J      = 7'b1101111; /*J-type*/
+    assign  J      = 7'b1101111; /*J-type Jal*/
+    assign  Jr     = 7'b1100111; /*J-type jalr*/
     assign  UA      = 7'b0010111; /*U-type auipc*/  
     assign  UL      = 7'b0110111; /*U-type lui*/  
     assign  Ii      = 7'b0010011; /*i type imm*/ 
 
 
-  assign ALUSrc   = (Opcode==LW || Opcode==SW || Opcode == RTypeI);
+  assign ALUSrc   = (Opcode==LW || Opcode==SW || Opcode == RTypeI || Opcode == UA || Opcode == UL || Opcode == Ii || Opcode == J || Opcode == Jr);
   assign MemtoReg = (Opcode==LW);
-  assign RegWrite = (Opcode==R_TYPE || Opcode==LW || Opcode == RTypeI);
+  assign RegWrite = (Opcode==R_TYPE || Opcode==LW || Opcode == RTypeI || Opcode ==UA || Opcode == UL || Opcode ==Ii || Opcode == J || Opcode == Jr);
   assign MemRead  = (Opcode==LW);
   assign MemWrite = (Opcode==SW);
-  assign ALUOp[0] = (Opcode==SW ||Opcode==LW);
+  assign ALUOp[0] = (Opcode==SW ||Opcode==LW || Opcode== BR);
   assign ALUOp[1] = (Opcode==RTypeI ||Opcode==LW);
-  assign Branch   = (Opcode==BR)   
+  assign Branch   = (Opcode==BR || Opcode == J || Opcode == Jr);   
+  assign Jump     = (Opcode==J || Opcode ==Jr);  
 
 endmodule
