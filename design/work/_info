@@ -10,7 +10,7 @@ cModel Technology
 Z0 d/users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/design
 vadder
 Z1 DXx6 sv_std 3 std 0 22 WmjPaeP=7F5?QFXzJ>D[Q2
-Z2 !s110 1551165485
+Z2 !s110 1551292014
 !i10b 1
 !s100 ijVXn`j8gkb?JEem_D[5R0
 I`0Z0i885=9FYME_PkW^0<3
@@ -26,7 +26,7 @@ Z6 OL;L;10.4c;61
 r1
 !s85 0
 31
-Z7 !s108 1551165485.000000
+Z7 !s108 1551292014.000000
 Z8 !s107 /users/ugrad/2018/winter/agnesj/eecs112lab2/design/RISC_V.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/Datapath.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/Controller.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/RegFile.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/alu.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/ALUController.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/instructionmemory.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/datamemory.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/mux2.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/imm_Gen.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/flopr.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/adder.sv|
 Z9 !s90 -64|-sv|-f|rtl.cfg|
 !i113 0
@@ -35,16 +35,16 @@ valu
 R1
 R2
 !i10b 1
-!s100 m]T7mCjQ4nCKgR@Oa8;:W0
-IUO^RzS82X5@hWiYmh13_62
+!s100 @QmQLHoW`@ehYAM<MLUU>1
+I<4PMZj^AWo]c>T7R@WT[=2
 R3
 !s105 alu_sv_unit
 S1
 R4
-w1551165480
+w1551292002
 8/users/ugrad/2018/winter/agnesj/eecs112lab2/design/alu.sv
 F/users/ugrad/2018/winter/agnesj/eecs112lab2/design/alu.sv
-Z11 L0 23
+L0 25
 R6
 r1
 !s85 0
@@ -67,7 +67,7 @@ R4
 w1551163463
 8/users/ugrad/2018/winter/agnesj/eecs112lab2/design/ALUController.sv
 F/users/ugrad/2018/winter/agnesj/eecs112lab2/design/ALUController.sv
-R11
+Z11 L0 23
 R6
 r1
 !s85 0
@@ -80,24 +80,24 @@ R10
 n@a@l@u@controller
 vController
 R1
-Z12 !s110 1551079159
+R2
 !i10b 1
-!s100 ;_d7Fc>;672Vg[ebC03OB1
-Ie@_>80gHm67_9Y2LFMNFm3
+!s100 ?eNk^JYPQ2O>Y:;kd_<5N2
+IQhVo=Bi6e@4V8`cH^fm[20
 R3
 !s105 Controller_sv_unit
 S1
-R0
-Z13 w1549912272
-8/users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/design/Controller.sv
-F/users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/design/Controller.sv
-Z14 L0 22
+R4
+w1551240074
+8/users/ugrad/2018/winter/agnesj/eecs112lab2/design/Controller.sv
+F/users/ugrad/2018/winter/agnesj/eecs112lab2/design/Controller.sv
+Z12 L0 22
 R6
 r1
 !s85 0
 31
-Z15 !s108 1551079159.000000
-Z16 !s107 /users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/design/RISC_V.sv|/users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/design/Datapath.sv|/users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/design/Controller.sv|/users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/design/RegFile.sv|/users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/design/alu.sv|/users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/design/ALUController.sv|/users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/design/instructionmemory.sv|/users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/design/datamemory.sv|/users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/design/mux2.sv|/users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/design/imm_Gen.sv|/users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/design/flopr.sv|/users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/design/adder.sv|
+R7
+R8
 R9
 !i113 0
 R10
@@ -127,7 +127,7 @@ R9
 R10
 vDatapath
 R1
-R12
+!s110 1551079159
 !i10b 1
 !s100 `0FNNzkB<_1;HoeAdQXQR0
 IY=j3SBPo]LPFQVHiKh:C@0
@@ -135,16 +135,16 @@ R3
 !s105 Datapath_sv_unit
 S1
 R0
-R13
+w1549912272
 8/users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/design/Datapath.sv
 F/users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/design/Datapath.sv
-R14
+R12
 R6
 r1
 !s85 0
 31
-R15
-R16
+!s108 1551079159.000000
+!s107 /users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/design/RISC_V.sv|/users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/design/Datapath.sv|/users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/design/Controller.sv|/users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/design/RegFile.sv|/users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/design/alu.sv|/users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/design/ALUController.sv|/users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/design/instructionmemory.sv|/users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/design/datamemory.sv|/users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/design/mux2.sv|/users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/design/imm_Gen.sv|/users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/design/flopr.sv|/users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/design/adder.sv|
 R9
 !i113 0
 R10
@@ -268,7 +268,7 @@ R10
 n@reg@file
 vriscv
 R1
-R2
+!s110 1551168797
 !i10b 1
 !s100 6QH9T_jSCAJo5D_6085U>3
 IGABzYjba>cL`7fbS2LjHJ1
@@ -284,22 +284,22 @@ R6
 r1
 !s85 0
 31
-R7
+!s108 1551168797.000000
 R8
 R9
 !i113 0
 R10
 vtb_alu
 R1
-!s110 1551165493
+!s110 1551292036
 !i10b 1
-!s100 W9AZnMEhZKzALmoKlC57^0
-I;Ad<fn23lRURSQ?=m;ahe0
+!s100 Dm4hIoG<cdiLkdeU]RQCE3
+ID?]Z8zF;ZiFQF8^Ke^TbY0
 R3
 !s105 tb_alu_sv_unit
 S1
 R4
-w1551165088
+w1551242493
 8/users/ugrad/2018/winter/agnesj/eecs112lab2/verif/tb_alu.sv
 F/users/ugrad/2018/winter/agnesj/eecs112lab2/verif/tb_alu.sv
 L0 3
@@ -307,18 +307,18 @@ R6
 r1
 !s85 0
 31
-!s108 1551165493.000000
+!s108 1551292036.000000
 !s107 /users/ugrad/2018/winter/agnesj/eecs112lab2/verif/tb_alu.sv|
-Z17 !s90 -64|-sv|-f|tb.cfg|-work|work|
+Z13 !s90 -64|-sv|-f|tb.cfg|-work|work|
 !i113 0
-Z18 o-sv -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z14 o-sv -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 Ttb_alu_opt
-!s110 1551165498
-V7J^7cWIczdKJ]P:OOD2<`1
+!s110 1551292131
+VM1n^XRTUn?QBBQeLoL68Q0
 04 6 4 work tb_alu fast 0
-Z19 o+acc -work work
+Z15 o+acc -work work
 ntb_alu_opt
-Z20 OL;O;10.4c;61
+Z16 OL;O;10.4c;61
 vtb_top
 R1
 !s110 1551079167
@@ -339,14 +339,14 @@ r1
 31
 !s108 1551079167.000000
 !s107 /users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/verif/tb_top.sv|
-R17
+R13
 !i113 0
-R18
+R14
 Ttb_top_opt
 !s110 1551164066
 VPdL?8UXM<QYmo@RL@8H_J1
 04 6 4 work tb_top fast 0
-R19
+R15
 ntb_top_opt
-R20
+R16
 R0

@@ -1,4 +1,5 @@
 `timescale 1ns / 1ps
+
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
@@ -8,6 +9,7 @@
 // Module Name: alu
 // Project Name: 
 // Target Devices: 
+
 // Tool Versions: 
 // Description: 
 // 
@@ -34,45 +36,66 @@ module alu#(
     
         always_comb
         begin
+	    Zero = 1'b0;
             ALUResult = 'd0;
             case(Operation)
             4'b0000:        // AND
                     ALUResult = SrcA & SrcB;
             4'b0001:        //OR
                     ALUResult = SrcA | SrcB;
-            4'b0010:        //ADD
+            4'b0010: begin       //ADD 
                     ALUResult = SrcA + SrcB;
-                    Zero = 1'b1; 
+		    Zero = 1'b1;
+                    end
 	    4'b0011:        //XOR
-	            ALUResult=SrcA^SrcB;
+	            ALUResult = SrcA^SrcB;
             4'b0110:        //Subtract
                     ALUResult = $signed(SrcA) - $signed(SrcB);
         // add these to ALU control
             4'b0111:        //SLL
-                    ALUResult = SrcA << SrcB[4:0];
+                    ALUResult = SrcA << SrcB;
             4'b1000:        //SRL
-                    ALUResult = SrcA >> SrcB[4:0];
-            4'b1001:        //SLT
-                    ALUResult = $signed(SrcA) < $signed(SrcB);
-                    Zero = ALUResult;
-            4'b1010:       //SLTU
-                    ALUResult = SrcA < SrcB;
-                    Zero = ALUResult;
+                    ALUResult = SrcA >> SrcB;
+            4'b1001: begin       //SLT
+                    if ($signed(SrcA) < $signed(SrcB))
+                        begin
+                            Zero = 1'b1;
+                            ALUResult = 1'b1;
+                        end
+                    else
+                        begin
+                            Zero = 1'b0;
+                            ALUResult = 1'b0;
+                        end
+	   	    end
+            4'b1010: begin      //SLTU
+                    if (SrcA < SrcB)
+                        begin
+                            Zero = 1'b1;
+                            ALUResult = 1'b1;
+                        end
+                    else
+                        begin
+                            Zero = 1'b0;
+                            ALUResult = 1'b0;
+                        end
+		    end
             4'b1011:       //SRA
                     ALUResult = $signed(SrcA) >>> SrcB;
-            4'b1100:       //BGE
-                    if ($signed(SrcA) >= $signed(SrcB)) 
-                      Zero = 1'b1; 
+            4'b1100: begin      //BGE
+		    if ($signed(SrcA) >= $signed(SrcB)) 
+                    	Zero = 1'b1; 
                     else 
-                      Zero = 1'b0;
-            4'b1101:       //BGEU
+                    	Zero = 1'b0;
+                    end
+            4'b1101: begin      //BGEU
                     if (SrcA >= SrcB) 
-                      Zero = 1'b1; 
+                    	Zero = 1'b1; 
                     else 
-                      Zero = 1'b0; 
+                  	Zero = 1'b0;
+                    end
             default:
                     ALUResult = 'b0;
             endcase
         end
 endmodule
-

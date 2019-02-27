@@ -46,6 +46,7 @@ logic [DATA_W-1:0] Result;
 logic [DATA_W-1:0] Reg1, Reg2;
 logic [DATA_W-1:0] ReadData;
 logic [DATA_W-1:0] SrcB, ALUResult;
+logic Zero;
 logic [DATA_W-1:0] ExtImm;
 
 // next PC
@@ -70,7 +71,7 @@ logic [DATA_W-1:0] ExtImm;
 
 //// ALU
     mux2 #(32) srcbmux(Reg2, ExtImm, ALUsrc, SrcB);
-    alu alu_module(Reg1, SrcB, ALU_CC, ALUResult);
+    alu alu_module(Reg1, SrcB, ALU_CC, ALUResult, Zero);
     // and1 #(9) andb(Branch, Zero, Bresult); 
    // adder1 newpcadd(PC,ExtImm,Sum); 
    // mux3 #(32) pcmux(PCPlus4,Sum, ALUResult,Jump,Bresult,PCAddress); 

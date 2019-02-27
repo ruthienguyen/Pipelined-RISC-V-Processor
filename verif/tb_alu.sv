@@ -7,7 +7,7 @@ module tb_alu;
   logic [31:0] SrcA;
   logic [31:0] SrcB;
   logic [31:0] ALUResult;
-//   logic Zero;
+  logic Zero;
 //   logic tb_clk, reset;
 //   logic [31:0] tb_WB_Data;
   
@@ -18,7 +18,7 @@ module tb_alu;
       .SrcA(SrcA),
       .SrcB(SrcB),
       .Operation(Operation),
-    //   .Zero(Zero),
+      .Zero(Zero),
       .ALUResult(ALUResult)
   );
   //reset Generation
@@ -45,6 +45,7 @@ module tb_alu;
     #5 $display("%b SUB %b = %b; Works:", SrcA, SrcB, ALUResult, ALUResult - ($signed(SrcA) - $signed(SrcB)));
 
     #5 Operation = 4'b0111; // SLL
+    SrcB = 32'b00000000000000000000000000001010;
     #5 $display("%b SHIFT LEFT LOGICAL %b = %b; Works:", SrcA, SrcB, ALUResult, ALUResult - (SrcA << 10)); //not sure if we should be using 10...?
 
     #5 Operation = 4'b1000; // SRL
