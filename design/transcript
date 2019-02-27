@@ -1,5 +1,5 @@
 # vsim -c tb_alu_opt -do "sim.do" 
-# Start time: 10:29:01 on Feb 27,2019
+# Start time: 10:56:07 on Feb 27,2019
 # //  Questa Sim-64
 # //  Version 10.4c linux_x86_64 Jul 19 2015
 # //
@@ -38,5 +38,5 @@
 #    Time: 200 ns  Iteration: 0  Instance: /tb_alu
 # Break in Module tb_alu at /users/ugrad/2018/winter/agnesj/eecs112lab2/verif/tb_alu.sv line 65
 # Stopped at /users/ugrad/2018/winter/agnesj/eecs112lab2/verif/tb_alu.sv line 65
-# End time: 10:29:01 on Feb 27,2019, Elapsed time: 0:00:00
+# End time: 10:56:08 on Feb 27,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0

@@ -30,14 +30,55 @@ module ALUController(
     //Output
     output logic [3:0] Operation //operation selection for ALU
 );
- 
- assign Operation[0]= ((ALUOp==2'b00) && (Funct7==7'b0000000) && (Funct3==3'b110 || Funct3==3'b100)) ||
-			            ((ALUOp==2'b10) && (Funct3==3'b110 ||Funct3==3'b100||Funct3==3'b001||Funct3==3'b101||Funct3==3'b010||Funct3==3'b011||Funct3==3'b101));
- assign Operation[1]= (((ALUOp==2'b00) || (ALUOp==2'b10)) && ((Funct7==7'b0000000) ||(Funct7==7'b0100000)) && ((Funct3==3'b000) || (Funct3==3'b100)
-                    ||Funct3==3'b001||Funct3==3'b101||Funct3==3'b010||Funct3==3'b011||Funct3==3'b101)) ||
-                        (ALUOp==2'b01) ||(ALUOp==2'b11);                  
- assign Operation[2]= ((ALUOp==2'b00 ||ALUOp==2'b10) && (Funct7==7'b0100000||Funct7==7'b0000000) && (Funct3==3'b000||Funct3==3'b001))
-                    || ((ALUOp==2'b00 || ALUOp==2'b10) && (Funct3==3'b010));
- assign Operation[3]= ((ALUOp==2'b10) && (Funct7==7'b0100000||Funct7==7'b0000000) && (Funct3==3'b101||Funct3==3'b010||Funct3==3'b011||Funct3==3'b101));
+
+    always_comb
+    begin 
+        case(Funct3) 
+        3'b000: begin//sub or add
+                    if (Funct7==7'b0000000 && ALUOp==2'b10)
+                        Operation = 4'b0010; //add
+                    else if (Funct7==7'b0100000 && ALUOp==2'b10)
+                        Operation = 4'b0110; //sub
+                end
+        3'b001: begin//sll
+                    if (Funct7==7'b0000000 && ALUOp==2'b10)
+                        Operation = 4'b0111;
+                end
+        3'b010: begin//slt
+                    if (Funct7==7'b0000000 && ALUOp==2'b10)
+                        Operation = 4'b1001;
+                end
+        3'b100: begin//xor
+                    if (Funct7==7'b0000000 && ALUOp==2'b10)
+                        Operation = 4'b0011;
+                end
+        3'b011: begin//sltu
+                    if (Funct7==7'b0000000 && ALUOp==2'b10)
+                        Operation = 4'b1010;
+                end
+        3'b101: begin//srl or sra
+                    if (Funct7==7'b0000000 && ALUOp==2'b10)
+                        Operation = 4'b1000; //srl
+                    else if (Funct7==7'b0100000 && ALUOp==2'b10)
+                        Operation = 4'b1011; //sra
+                end
+        3'b110: begin//or
+                    if (Funct7==7'b0000000 && ALUOp==2'b01)
+                        Operation = 4'b0001;
+                end
+        3'b111: begin//and
+                    if (Funct7==7'b0000000 && ALUOp==2'b00)
+                        Operation = 4'b0000;
+                end
+        endcase 
+     end 
+//  assign Operation[0]= ((ALUOp==2'b00) && (Funct7==7'b0000000) && (Funct3==3'b110 || Funct3==3'b100)) ||
+// 			            ((ALUOp==2'b10) && (Funct3==3'b110 ||Funct3==3'b100||Funct3==3'b001||Funct3==3'b101||Funct3==3'b010||Funct3==3'b011||Funct3==3'b101));
+//  assign Operation[1]= (((ALUOp==2'b00) || (ALUOp==2'b10)) && ((Funct7==7'b0000000) ||(Funct7==7'b0100000)) && ((Funct3==3'b000) || (Funct3==3'b100)
+//                     ||Funct3==3'b001||Funct3==3'b101||Funct3==3'b010||Funct3==3'b011||Funct3==3'b101)) ||
+//                         (ALUOp==2'b01) ||(ALUOp==2'b11);                  
+//  assign Operation[2]= ((ALUOp==2'b00 ||ALUOp==2'b10) && (Funct7==7'b0100000||Funct7==7'b0000000) && (Funct3==3'b000||Funct3==3'b001))
+//                     || ((ALUOp==2'b00 || ALUOp==2'b10) && (Funct3==3'b010));
+//  assign Operation[3]= ((ALUOp==2'b10) && (Funct7==7'b0100000||Funct7==7'b0000000) && (Funct3==3'b101||Funct3==3'b010||Funct3==3'b011||Funct3==3'b101));
 
 endmodule
