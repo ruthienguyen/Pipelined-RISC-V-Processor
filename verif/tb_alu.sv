@@ -49,17 +49,21 @@ module tb_alu;
     #5 $display("%b SHIFT LEFT LOGICAL %b = %b; Works:", SrcA, SrcB, ALUResult, ALUResult - (SrcA << 10)); //not sure if we should be using 10...?
 
     #5 Operation = 4'b1000; // SRL
-    SrcB = 32'b00000000000000000000000000001010;
     #5 $display("%b SHIFT RIGHT LOGICAL %b = %b; Works:", SrcA, SrcB, ALUResult, ALUResult - (SrcA >> 10));
 
     #5 Operation = 4'b1001; // SLT
-    #5 $display("%b COMP SIGNED %b = %b; Works:", SrcA, SrcB, ALUResult, ALUResult - 1'bx);
+    SrcA = 32'b00010001001111000010110111100100;
+    SrcB = 32'b11111011000010110100100001110111; // should return 0 because SrcB is negative when signed
+    #5 $display("%b COMP SIGNED %b = %b; Works:", SrcA, SrcB, ALUResult, ALUResult - 32'b00000000000000000000000000000000);
 
     #5 Operation = 4'b1010; // SLTU
-    #5 $display("%b COMP UNSIGNED %b = %b; Works:", SrcA, SrcB, ALUResult, ALUResult - 1'bx);
+    SrcA = 32'b00010001001111000010110111100100;
+    SrcB = 32'b11111011000010110100100001110111; // should return 1, both are positive #s
+    #5 $display("%b COMP UNSIGNED %b = %b; Works:", SrcA, SrcB, ALUResult, ALUResult - 32'b00000000000000000000000000000001);
 
     #5 Operation = 4'b1011; // SRA
     SrcA = 32'b11111011000010110100100001110111;
+    SrcB = 32'b00000000000000000000000000001010;
     #5 $display("%b SHIFT RIGHT ARITHMETIC %b = %b; Works:", SrcA, SrcB, ALUResult, $signed(ALUResult) - ($signed(SrcA) >>> 10));
 
     #100 $stop;

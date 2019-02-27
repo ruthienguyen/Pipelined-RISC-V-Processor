@@ -1,0 +1,9 @@
+#!bin/bash
+
+source setup.csh
+cd ../design
+source pre_compile.csh
+vlog -64 -sv -f rtl.cfg
+vlog -64 -sv -f tb.cfg -work work
+vopt -64 tb_alu -o tb_alu_opt +acc -work work
+vsim -64 -c tb_alu_opt -do sim.do
