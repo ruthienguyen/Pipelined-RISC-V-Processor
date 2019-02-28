@@ -37,8 +37,8 @@ module ALUController(
         3'b000: begin//sub or add
                     if (Funct7==7'b0000000 && ALUOp==2'b10)
                         Operation = 4'b0010; //add
-                    else if (Funct7==7'b0100000 && ALUOp==2'b10)
-                        Operation = 4'b0110; //sub
+                    else if (Funct7==7'b0100000 && (ALUOp==2'b10||ALUOp==2'b01))
+                        Operation = 4'b0110; //sub and beq
                 end
         3'b001: begin//sll
                     if (Funct7==7'b0000000 && ALUOp==2'b10)
