@@ -1,5 +1,5 @@
-# vsim -c tb_controller_opt -do "sim.do" 
-# Start time: 00:43:41 on Mar 01,2019
+# vsim -c tb_alu_opt -do "sim.do" 
+# Start time: 01:05:21 on Mar 01,2019
 # //  Questa Sim-64
 # //  Version 10.4c linux_x86_64 Jul 19 2015
 # //
@@ -16,42 +16,44 @@
 # //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
 # //
 # Loading sv_std.std
-# Loading work.tb_controller(fast)
-# Loading work.Controller(fast)
+# Loading work.tb_alu(fast)
+# Loading work.alu(fast)
 # do sim.do
 # waveform.wlf
-# begin controller test
+# begin ALU test 
 # 
-# LUI:0110111
-# ALUSrc:1, MemtoReg:0, RegWrite:1, MemRead:0, MemWrite:0, Branch:0, ALUOp:00
+# "Works: 0" means it worked
 # 
-# AUIPC:0010111
-# ALUSrc:1, MemtoReg:0, RegWrite:1, MemRead:0, MemWrite:0, Branch:0, ALUOp:00
-# 
-# JAL:1101111
-# ALUSrc:1, MemtoReg:0, RegWrite:1, MemRead:0, MemWrite:0, Branch:1, ALUOp:00
-# 
-# JALR:1100111
-# ALUSrc:1, MemtoReg:0, RegWrite:1, MemRead:0, MemWrite:0, Branch:1, ALUOp:00
-# 
-# B Type:1100011
-# ALUSrc:0, MemtoReg:0, RegWrite:0, MemRead:0, MemWrite:0, Branch:1, ALUOp:01
-# 
-# Load:0000011
-# ALUSrc:1, MemtoReg:1, RegWrite:1, MemRead:1, MemWrite:0, Branch:0, ALUOp:00
-# 
-# Save:0100011
-# ALUSrc:1, MemtoReg:0, RegWrite:0, MemRead:0, MemWrite:1, Branch:0, ALUOp:00
-# 
-# I Type:0010011
-# ALUSrc:1, MemtoReg:0, RegWrite:1, MemRead:0, MemWrite:0, Branch:0, ALUOp:00
-# 
-# R Type:0110011
-# ALUSrc:0, MemtoReg:0, RegWrite:1, MemRead:0, MemWrite:0, Branch:0, ALUOp:10
-# 
-# ** Note: $stop    : /users/ugrad/2018/winter/agnesj/eecs112lab2/verif/tb_controller.sv(85)
-#    Time: 200 ns  Iteration: 0  Instance: /tb_controller
-# Break in Module tb_controller at /users/ugrad/2018/winter/agnesj/eecs112lab2/verif/tb_controller.sv line 85
-# Stopped at /users/ugrad/2018/winter/agnesj/eecs112lab2/verif/tb_controller.sv line 85
-# End time: 00:43:41 on Mar 01,2019, Elapsed time: 0:00:00
+# 00000000000000000000000000000100 AND 00000000000000000000000000000101 = 00000000000000000000000000000100; Works:         0
+# zero: 0
+# ALUResult:          4
+# 00000000000000000000000000000100 OR 00000000000000000000000000000101 = 00000005; Works:         0
+# zero: 0
+# ALUResult:          5
+# 00000000000000000000000000000100 ADD 00000000000000000000000000000101 = 00000000000000000000000000001001; Works:         0
+# zero: 0
+# 00000000000000000000000000000100 XOR 00000000000000000000000000000101 = 00000000000000000000000000000001; Works:         0
+# zero: 0
+# 00000000000000000000000000000100 SUB 00000000000000000000000000000101 = ffffffff; Works:         0
+# zero: 0
+# ALUResult: 4294967295
+# 00000000000000000000000000000100 SHIFT LEFT LOGICAL 00000000000000000000000000001010 = 00000000000000000001000000000000; Works:         0
+# zero: 0
+# 00000000000000000000000000000100 SHIFT RIGHT LOGICAL 00000000000000000000000000001010 = 00000000000000000000000000000000; Works:         0
+# zero: 0
+# 00010001001111000010110111100100 COMP SIGNED 11111011000010110100100001110111 = 00000000000000000000000000000000; Works:         0
+# zero: 0
+# 00010001001111000010110111100100 COMP UNSIGNED 11111011000010110100100001110111 = 00000000000000000000000000000001; Works:         0
+# 11111011000010110100100001110111 SHIFT RIGHT ARITHMETIC 00000000000000000000000000001010 = 11111111111111101100001011010010; Works:          0
+# 00000000000000000000000000000100 BEQ 00000000000000000000000000000101 = 11111111111111111111111111111111; Works:         0
+# 00000000000000000000000000000100 BNE 00000000000000000000000000000101 = 11111111111111111111111111111111; Works:         0
+# 00000000000000000000000000000100 BGE 00000000000000000000000000000101 = 00000000000000000000000000000000; Works:         0
+# 00000000000000000000000000000100 BLT 00000000000000000000000000000101 = 00000000000000000000000000000001; Works:         0
+# 00000000000000000000000000000100 BLTU 00000000000000000000000000000101 = 00000000000000000000000000000001; Works:         0
+# 00000000000000000000000000000100 BGEU 00000000000000000000000000000101 = 00000000000000000000000000000000; Works:         0
+# ** Note: $stop    : /users/ugrad/2018/winter/agnesj/eecs112lab2/verif/tb_alu.sv(104)
+#    Time: 321 ns  Iteration: 0  Instance: /tb_alu
+# Break in Module tb_alu at /users/ugrad/2018/winter/agnesj/eecs112lab2/verif/tb_alu.sv line 104
+# Stopped at /users/ugrad/2018/winter/agnesj/eecs112lab2/verif/tb_alu.sv line 104
+# End time: 01:05:22 on Mar 01,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0

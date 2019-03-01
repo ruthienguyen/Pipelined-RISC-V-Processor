@@ -10,7 +10,7 @@ cModel Technology
 Z0 d/users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/design
 vadder
 Z1 DXx6 sv_std 3 std 0 22 WmjPaeP=7F5?QFXzJ>D[Q2
-Z2 !s110 1551429820
+Z2 !s110 1551431120
 !i10b 1
 !s100 ijVXn`j8gkb?JEem_D[5R0
 I`0Z0i885=9FYME_PkW^0<3
@@ -26,7 +26,7 @@ Z6 OL;L;10.4c;61
 r1
 !s85 0
 31
-Z7 !s108 1551429820.000000
+Z7 !s108 1551431120.000000
 Z8 !s107 /users/ugrad/2018/winter/agnesj/eecs112lab2/design/RISC_V.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/Datapath.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/Controller.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/RegFile.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/alu.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/ALUController.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/instructionmemory.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/datamemory.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/mux3.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/mux2.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/imm_Gen.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/flopr.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/and1.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/adder1.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/adder.sv|
 Z9 !s90 -64|-sv|-f|rtl.cfg|
 !i113 0
@@ -360,15 +360,15 @@ R9
 R10
 vtb_alu
 R1
-!s110 1551428589
+Z14 !s110 1551431121
 !i10b 1
-!s100 VCQHR1CTzi1=RD7:I1M3:1
-ICjM_fA=]kL:4RK^WY@Y@a1
+!s100 oZ:<nd0oOF7gWiHd8S2Yn2
+IKZOPa;f03g<[bQXIoAhW00
 R3
 !s105 tb_alu_sv_unit
 S1
 R4
-R11
+w1551431116
 8/users/ugrad/2018/winter/agnesj/eecs112lab2/verif/tb_alu.sv
 F/users/ugrad/2018/winter/agnesj/eecs112lab2/verif/tb_alu.sv
 L0 3
@@ -376,19 +376,18 @@ R6
 r1
 !s85 0
 31
-!s108 1551428589.000000
+R7
 !s107 /users/ugrad/2018/winter/agnesj/eecs112lab2/verif/tb_alu.sv|
-Z14 !s90 -64|-sv|-f|tb.cfg|-work|work|
+Z15 !s90 -64|-sv|-f|tb.cfg|-work|work|
 !i113 0
-Z15 o-sv -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z16 o-sv -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 Ttb_alu_opt
-!s110 1551428590
-V84SKPO;P]jQ36D@7>70k01
+R14
+VKzN32zN9_]0a^ShP>jYB]2
 04 6 4 work tb_alu fast 0
-Z16 o+acc -work work
+Z17 o+acc -work work
 ntb_alu_opt
-Z17 OL;O;10.4c;61
-R0
+Z18 OL;O;10.4c;61
 vtb_Controller
 R1
 !s110 1551429243
@@ -396,53 +395,54 @@ R1
 !s100 :oSG4?1z^U_EW;G@k1FaY2
 I;adKSeYGoTW:`jB]1@FIJ1
 R3
-Z18 !s105 tb_controller_sv_unit
+Z19 !s105 tb_controller_sv_unit
 S1
 R4
 w1551428926
-Z19 8/users/ugrad/2018/winter/agnesj/eecs112lab2/verif/tb_controller.sv
-Z20 F/users/ugrad/2018/winter/agnesj/eecs112lab2/verif/tb_controller.sv
+Z20 8/users/ugrad/2018/winter/agnesj/eecs112lab2/verif/tb_controller.sv
+Z21 F/users/ugrad/2018/winter/agnesj/eecs112lab2/verif/tb_controller.sv
 L0 5
 R6
 r1
 !s85 0
 31
 !s108 1551429243.000000
-Z21 !s107 /users/ugrad/2018/winter/agnesj/eecs112lab2/verif/tb_controller.sv|
-R14
-!i113 0
+Z22 !s107 /users/ugrad/2018/winter/agnesj/eecs112lab2/verif/tb_controller.sv|
 R15
+!i113 0
+R16
 ntb_@controller
 vtb_controller
 R1
-R2
+Z23 !s110 1551429820
 !i10b 1
 !s100 hB65<G:nE8B[UHQ22?]363
 InQhXPR;GT6`MX<^:8XH?X1
 R3
-R18
+R19
 S1
 R4
 w1551429682
-R19
 R20
+R21
 L0 5
 R6
 r1
 !s85 0
 31
-R7
-R21
-R14
-!i113 0
+!s108 1551429820.000000
+R22
 R15
+!i113 0
+R16
 Ttb_controller_opt
-R2
+R23
 V@=GiNlAbNE]D0N3OGPGin2
 04 13 4 work tb_controller fast 0
-R16
-ntb_controller_opt
 R17
+ntb_controller_opt
+R18
+R0
 vtb_top
 R1
 !s110 1551079167
@@ -463,14 +463,14 @@ r1
 31
 !s108 1551079167.000000
 !s107 /users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/verif/tb_top.sv|
-R14
-!i113 0
 R15
+!i113 0
+R16
 Ttb_top_opt
 !s110 1551164066
 VPdL?8UXM<QYmo@RL@8H_J1
 04 6 4 work tb_top fast 0
-R16
-ntb_top_opt
 R17
+ntb_top_opt
+R18
 R0

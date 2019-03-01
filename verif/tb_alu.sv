@@ -77,6 +77,29 @@ module tb_alu;
     SrcA = 32'b11111011000010110100100001110111;
     SrcB = 32'b00000000000000000000000000001010;
     #5 $display("%b SHIFT RIGHT ARITHMETIC %b = %b; Works:", SrcA, SrcB, ALUResult, $signed(ALUResult) - ($signed(SrcA) >>> 10));
+    
+    SrcA = 32'b00000000000000000000000000000100;
+    SrcB = 32'b00000000000000000000000000000101;
+
+    #5 Operation = 4'b0110; // BEQ
+    #5 $display("%b BEQ %b = %b; Works:", SrcA, SrcB, ALUResult, ALUResult - ($signed(SrcA) - $signed(SrcB)));
+
+    #5 Operation = 4'b0110; // BNE
+    #5 $display("%b BNE %b = %b; Works:", SrcA, SrcB, ALUResult, ALUResult - ($signed(SrcA) - $signed(SrcB)));
+    
+    #5 Operation = 4'b1100; // BGE
+    SrcA = 32'b00000000000000000000000000000100;
+    SrcB = 32'b00000000000000000000000000000101;
+    #5 $display("%b BGE %b = %b; Works:", SrcA, SrcB, ALUResult, ALUResult - 32'b00000000000000000000000000000000);
+    
+    #5 Operation = 4'b1001; // BLT
+    #5 $display("%b BLT %b = %b; Works:", SrcA, SrcB, ALUResult, ALUResult - 32'b00000000000000000000000000000001);
+
+    #5 Operation = 4'b1010; // BLTU
+    #5 $display("%b BLTU %b = %b; Works:", SrcA, SrcB, ALUResult, ALUResult - 32'b00000000000000000000000000000001);
+
+    #5 Operation = 4'b1101; // BGEU
+    #5 $display("%b BGEU %b = %b; Works:", SrcA, SrcB, ALUResult, ALUResult - 32'b00000000000000000000000000000000);
 
     #150 $stop;
 
