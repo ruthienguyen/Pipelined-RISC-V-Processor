@@ -43,12 +43,18 @@ module alu#(
                     ALUResult = SrcA & SrcB;
             4'b0001:        //OR
                     ALUResult = SrcA | SrcB;
-            4'b0010:       //ADD 
+            4'b0010:       //ADD
+                  begin
                     ALUResult = SrcA + SrcB;
+                    Zero = 1'b1;
+                    end
 	          4'b0011:        //XOR
 	            ALUResult = SrcA^SrcB;
-            4'b0110:        //Subtract
+            4'b0110:begin        //Subtract
                     ALUResult = $signed(SrcA) - $signed(SrcB);
+                    if (ALUResult == 0)  
+                      Zero = 1'b1; 
+            end        
             4'b0111:        //SLL
                     ALUResult = SrcA << SrcB;
             4'b1000:        //SRL
@@ -84,12 +90,42 @@ module alu#(
             4'b1100:
             begin      //BGE
 		                if ($signed(SrcA) >= $signed(SrcB)) 
-                    	Zero = 1'b1; 
+                      begin
+                    	Zero = 1'b1;
+                      ALUResult = 1'b1;
+                      end
+                    else
+                        begin
+                            Zero = 1'b0;
+                            ALUResult = 1'b0;
+                        end
             end
             4'b1101:
             begin      //BGEU
-                    if (SrcA >= SrcB) 
+                    if (SrcA >= SrcB)
+                    begin
                     	Zero = 1'b1; 
+                      ALUResult = 1'b1; 
+                    end
+                    else
+                        begin
+                            Zero = 1'b0;
+                            ALUResult = 1'b0;
+                        end
+
+            end
+            4'b1110:
+            begin      //BNE
+                    if (SrcA != SrcB) 
+                     begin
+                    	Zero = 1'b1; 
+                      ALUResult = 1'b1; 
+                    end
+                    else
+                        begin
+                            Zero = 1'b0;
+                            ALUResult = 1'b0;
+                        end
             end
             default:
             begin

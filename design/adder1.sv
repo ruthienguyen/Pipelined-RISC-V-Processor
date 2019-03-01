@@ -10,8 +10,7 @@ module adder1
 logic [DATA_W-1:0] PCext; 
 
 //extend pc to add to extimm
-assign PCext = {23'b0,a}; 
-
+//assign PCext = a << 1; 
 assign y = a + b;
 
 endmodule

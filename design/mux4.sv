@@ -5,11 +5,11 @@
 // 
 // Create Date: 01/07/2018 10:21:50 PM
 // Design Name: 
-// Module Name: mux2
+// Module Name: mux4
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
-// Description: 
+// Description: 3 to 1 mux for result 
 // 
 // Dependencies: 
 // 
@@ -20,21 +20,21 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module mux3
+module mux4
     #(parameter WIDTH = 9,
       parameter DATA_W = 32)
-    (input logic [WIDTH-1:0] d0,d1,
-     input logic [DATA_W-1:0] d2,
+    (input logic [DATA_W-1:0] d0,d1,
+     input logic [WIDTH-1:0] d2,
      input logic s1,s0,
-     output logic [WIDTH-1:0] y);
+     output logic [DATA_W-1:0] y);
 
 
-logic [WIDTH-1:0] lowerALU; 
+logic [WIDTH-1:0] PCPlus4; 
 
-//take lower 9 bits of ALUresult
-assign lowerALU = {d2[WIDTH-1:1],1'b0};
+//extend pc bits to fill reg
+assign PCPlus4 = {23'b0,d2};
 
-assign y = s1 ? (s0 ? d0 : lowerALU) :
+assign y = s1 ? (s0 ? d0 : PCPlus4) :
                 (s0 ? d1 : d0) ;
 
 endmodule

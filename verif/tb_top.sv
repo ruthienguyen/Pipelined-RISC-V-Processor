@@ -6,7 +6,8 @@ module tb_top;
   logic tb_clk, reset;
   logic [31:0] tb_WB_Data;
   logic [31:0] Address;
-  
+  logic [8:0] newadd; 
+  logic J,Br,Z,B; 
     //clock generation
   always #10 tb_clk = ~tb_clk;
   
@@ -22,7 +23,12 @@ module tb_top;
       .clk(tb_clk),
       .reset(reset),
       .WB_Data(tb_WB_Data),      
-      .Address(Address)      
+      .Address(Address),      
+      .newadd(newadd), //ALU_Result
+      .J(J),
+      .Br(Br),
+      .Z(Z),
+      .B(B) //ALU_Result
      );
 
   initial begin

@@ -10,7 +10,7 @@ cModel Technology
 Z0 d/users/ugrad/2017/fall/ruthn/eecs112lab2/sim
 vadder
 Z1 DXx6 sv_std 3 std 0 22 WmjPaeP=7F5?QFXzJ>D[Q2
-Z2 !s110 1551428149
+Z2 !s110 1551449396
 !i10b 1
 !s100 ijVXn`j8gkb?JEem_D[5R0
 I3h_fGNZIT^nmRed5Ea4iF3
@@ -26,8 +26,8 @@ Z5 OL;L;10.4c;61
 r1
 !s85 0
 31
-Z6 !s108 1551428149.000000
-Z7 !s107 /users/ugrad/2017/fall/ruthn/eecs112lab2/design/RISC_V.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/Datapath.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/Controller.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/RegFile.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/alu.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/ALUController.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/instructionmemory.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/datamemory.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/mux3.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/mux2.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/imm_Gen.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/flopr.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/and1.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/adder1.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/adder.sv|
+Z6 !s108 1551449396.000000
+Z7 !s107 /users/ugrad/2017/fall/ruthn/eecs112lab2/design/RISC_V.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/Datapath.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/Controller.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/RegFile.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/alu.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/ALUController.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/instructionmemory.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/datamemory.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/mux4.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/mux3.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/mux2.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/imm_Gen.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/flopr.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/and1.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/adder1.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/adder.sv|
 Z8 !s90 -quiet|-64|-sv|-f|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/rtl.cfg|
 !i113 0
 Z9 o-quiet -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
@@ -35,13 +35,13 @@ vadder1
 R1
 R2
 !i10b 1
-!s100 4m:Ko6jKLAjB>b=z^IU>]3
-IT;`@DbfzVffERIC=C^[?i0
+!s100 NnSUG6PLk1XBH^cGRhTda2
+I`9GT?Om3PlWd=QY<z`G582
 R3
 !s105 adder1_sv_unit
 S1
 R0
-w1551412664
+w1551441350
 8/users/ugrad/2017/fall/ruthn/eecs112lab2/design/adder1.sv
 F/users/ugrad/2017/fall/ruthn/eecs112lab2/design/adder1.sv
 L0 3
@@ -58,13 +58,13 @@ valu
 R1
 R2
 !i10b 1
-!s100 5mifb^PbU[W4VlQ_7H[Ri2
-ISLF<A==kgBmi^T8]98SbU2
+!s100 9D;2OO7:k7@AW@6n`_dDl2
+Ilo>bEK>WemXjO0<AGdM=J3
 R3
 !s105 alu_sv_unit
 S1
 R0
-w1551424880
+w1551447396
 8/users/ugrad/2017/fall/ruthn/eecs112lab2/design/alu.sv
 F/users/ugrad/2017/fall/ruthn/eecs112lab2/design/alu.sv
 L0 25
@@ -81,13 +81,13 @@ vALUController
 R1
 R2
 !i10b 1
-!s100 ?^9jzLj8DeWf6ih^MLaNI2
-InZ4ZN9df7OZEnf0eeo@WP0
+!s100 9T::eN_o4f3QcX[AVd5HB0
+IFc_ZGWRCH;F>le;I;m3U[0
 R3
 !s105 ALUController_sv_unit
 S1
 R0
-w1551422998
+w1551449392
 8/users/ugrad/2017/fall/ruthn/eecs112lab2/design/ALUController.sv
 F/users/ugrad/2017/fall/ruthn/eecs112lab2/design/ALUController.sv
 Z10 L0 23
@@ -128,13 +128,13 @@ vController
 R1
 R2
 !i10b 1
-!s100 ?eNk^JYPQ2O>Y:;kd_<5N2
-IC:dgFD34B7goOXCe4Q36X3
+!s100 o<[G^`RL:JKnA^AjO<=Dz1
+I<0Jj5l:QbC9>QoSni5<?]0
 R3
 !s105 Controller_sv_unit
 S1
 R0
-w1551179130
+w1551448593
 8/users/ugrad/2017/fall/ruthn/eecs112lab2/design/Controller.sv
 F/users/ugrad/2017/fall/ruthn/eecs112lab2/design/Controller.sv
 Z11 L0 22
@@ -175,13 +175,13 @@ vDatapath
 R1
 R2
 !i10b 1
-!s100 ZN<D]ifXOOYnKA693dmEC0
-I;RIPSBe3JJcjHIRl[XUZ;3
+!s100 YnM7AiE]nnJG_7^ING`[E1
+I]LR1N<1_YIOk;;=`eY:jH0
 R3
 !s105 Datapath_sv_unit
 S1
 R0
-w1551421143
+w1551446946
 8/users/ugrad/2017/fall/ruthn/eecs112lab2/design/Datapath.sv
 F/users/ugrad/2017/fall/ruthn/eecs112lab2/design/Datapath.sv
 R11
@@ -292,15 +292,38 @@ vmux3
 R1
 R2
 !i10b 1
-!s100 i17PndEl7zRA@YnaNJF1j2
-ITI7Q3NhL2IWoZ7XHdN;TQ2
+!s100 4<d:hSQgNTV7_WX:lFa>Q0
+IW_nMTM4PC@HZA6fbg9nhd0
 R3
 !s105 mux3_sv_unit
 S1
 R0
-w1551413891
+w1551440116
 8/users/ugrad/2017/fall/ruthn/eecs112lab2/design/mux3.sv
 F/users/ugrad/2017/fall/ruthn/eecs112lab2/design/mux3.sv
+R10
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+vmux4
+R1
+R2
+!i10b 1
+!s100 0k]hRTh;=WoFKJ>S^CEPS0
+IbZ_`L^bBzZ]c[ecn?lCFP1
+R3
+!s105 mux4_sv_unit
+S1
+R0
+w1551446875
+8/users/ugrad/2017/fall/ruthn/eecs112lab2/design/mux4.sv
+F/users/ugrad/2017/fall/ruthn/eecs112lab2/design/mux4.sv
 R10
 R5
 r1
@@ -339,13 +362,13 @@ vriscv
 R1
 R2
 !i10b 1
-!s100 6E52DWg9@MYa?NBn;QNRH2
-I57oHOAD>09G6BJ64DMQFB3
+!s100 Dj?c;9jf9WHonI[oL?7aa3
+I4zCjM=9=@cRU^:WkDnAn12
 R3
 !s105 RISC_V_sv_unit
 S1
 R0
-w1551417913
+w1551446640
 8/users/ugrad/2017/fall/ruthn/eecs112lab2/design/RISC_V.sv
 F/users/ugrad/2017/fall/ruthn/eecs112lab2/design/RISC_V.sv
 L0 3
@@ -383,15 +406,15 @@ Z12 !s90 -quiet|-64|-sv|-f|/users/ugrad/2017/fall/ruthn/eecs112lab2/verif/tb.cfg
 Z13 o-quiet -sv -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 vtb_branch
 R1
-!s110 1551416361
+!s110 1551434754
 !i10b 1
-!s100 ;j0[1EYhHoV83O8:dgT4X3
-I]PHLU39LXiJznPg;f3`za3
+!s100 bI;OGNZkY>n^5_fCkUI^M1
+IE92T7TF9kgYY`AUXO=zW50
 R3
 !s105 tb_branch_sv_unit
 S1
 R0
-w1551416349
+w1551434734
 8/users/ugrad/2017/fall/ruthn/eecs112lab2/verif/tb_branch.sv
 F/users/ugrad/2017/fall/ruthn/eecs112lab2/verif/tb_branch.sv
 L0 3
@@ -399,7 +422,7 @@ R5
 r1
 !s85 0
 31
-!s108 1551416361.000000
+!s108 1551434754.000000
 !s107 /users/ugrad/2017/fall/ruthn/eecs112lab2/verif/tb_branch.sv|
 R12
 !i113 0
@@ -408,13 +431,13 @@ vtb_top
 R1
 R2
 !i10b 1
-!s100 ZO3[UcDBRI7dFgHO6EF652
-IPohna4TizanATSm;oQcbe1
+!s100 YR3DNXjXSzCaU1n1H>?Ka2
+IPUM1CjzkG3gaGRV`3ebAg3
 R3
 !s105 tb_top_sv_unit
 S1
 R0
-w1551428090
+w1551438503
 8/users/ugrad/2017/fall/ruthn/eecs112lab2/verif/tb_top.sv
 F/users/ugrad/2017/fall/ruthn/eecs112lab2/verif/tb_top.sv
 L0 3
@@ -429,7 +452,7 @@ R12
 R13
 Ttb_top_opt
 R2
-V0a_1U3]R^cjLLGm]PTmUE3
+Veb2=5;>KCkF:zJ:?]mWHR1
 04 6 4 work tb_top fast 0
 o-quiet +acc -work work
 ntb_top_opt

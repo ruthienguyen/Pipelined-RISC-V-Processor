@@ -33,8 +33,9 @@ module Controller(
     output logic MemRead,  //Data memory contents designated by the address input are put on the Read data output
     output logic MemWrite, //Data memory contents designated by the address input are replaced by the value on the Write data input.
     output logic Branch,  //0: branch is not taken; 1: branch is taken
-    output logic Jump,  //0: jal; 1: jalr
-    output logic [1:0] ALUOp
+    output logic Jump,    //0: jal; 1: jalr
+    output logic [1:0] ALUOp,
+    output logic PCr       //asserted when we need to store PC+4
 );
 
 //    localparam R_TYPE = 7'b0110011;
@@ -62,9 +63,10 @@ module Controller(
   assign RegWrite = (Opcode==R_TYPE || Opcode==LW || Opcode == RTypeI || Opcode ==UA || Opcode == UL || Opcode ==Ii || Opcode == J || Opcode == Jr);
   assign MemRead  = (Opcode==LW);
   assign MemWrite = (Opcode==SW);
-  assign ALUOp[0] = (Opcode== BR);
-  assign ALUOp[1] = (Opcode==R_TYPE);
-  assign Branch   = (Opcode==BR || Opcode == J || Opcode == Jr);   
-  assign Jump     = (Opcode==J || Opcode ==Jr);  
+  assign ALUOp[0] = (Opcode== BR||Opcode== Ii);
+  assign ALUOp[1] = (Opcode==R_TYPE || Opcode == Ii);
+  assign Branch   = (Opcode==BR || Opcode == J);   
+  assign Jump     = ( Opcode ==Jr);  
+  assign PCr      = (Opcode == J || Opcode == Jr); 
 
 endmodule

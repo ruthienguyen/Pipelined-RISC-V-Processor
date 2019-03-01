@@ -32,13 +32,16 @@ module Datapath #(
     RegWrite , MemtoReg ,     // Register file writing enable   // Memory or ALU MUX
     ALUsrc , MemWrite ,       // Register file or Immediate MUX // Memroy Writing Enable
     MemRead , Branch               // Memroy Reading Enable // branch taken or not
-    , Jump,                    //jal or jalr
+    , Jump, PCr,                   //jal or jalr // pc+4 needs to be stored
     input logic [ ALU_CC_W -1:0] ALU_CC, // ALU Control Code ( input of the ALU )
     output logic [6:0] opcode,
     output logic [6:0] Funct7,
     output logic [2:0] Funct3,
     output logic [DATA_W-1:0] WB_Data,//ALU_Result
-    output logic [DATA_W-1:0] Address //ALU_Result
+    output logic [DATA_W-1:0] Address,//ALU_Result
+    output logic [PC_W-1:0] newadd,//ALU_Result
+    output logic J,Br,Z,B //ALU_Result
+
     );
 
 logic [PC_W-1:0] PC, PCPlus4,NewAdd,PCAddress;
@@ -67,8 +70,8 @@ logic count;
     RegFile rf(clk, reset, RegWrite, Instr[11:7], Instr[19:15], Instr[24:20],
             Result, Reg1, Reg2);
             
-    mux2 #(32) resmux(ALUResult, ReadData, MemtoReg, Result);
-           
+    mux4 resmux(ALUResult, ReadData, PCPlus4, PCr, MemtoReg, Result);
+
 //// sign extend
     imm_Gen Ext_Imm (Instr,ExtImm);
 
@@ -78,9 +81,14 @@ logic count;
     and1  andb(Branch, Zero, Bresult); 
     adder1 newpcadd(PC,ExtImm,NewAdd); 
     mux3 pcmux(PCPlus4,NewAdd, ALUResult,Jump,Bresult,PCAddress); 
-    
+   
+    assign newadd = NewAdd/4; 
+    assign J = Jump; 
+    assign Br = Bresult;
+    assign Z = Zero;
+    assign B = Branch; 
     assign WB_Data = Result;
-    assign Address = PCAddress;
+    assign Address = PCAddress/4;
     
 ////// Data memory 
 	datamemory data_mem (clk, MemRead, MemWrite, ALUResult[DM_ADDRESS-1:0], Reg2, ReadData);

@@ -1,5 +1,4 @@
-# vsim -quiet -c tb_top_opt -do "sim.do" "+notimingchecks" 
-# Start time: 00:15:50 on Mar 01,2019
+# Reading pref.tcl
 # //  Questa Sim-64
 # //  Version 10.4c linux_x86_64 Jul 19 2015
 # //
@@ -15,10 +14,20 @@
 # //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
 # //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
 # //
-# do sim.do
-# waveform.wlf
-# WB: 00000000, Add:          4
-# ** Note: $finish    : /users/ugrad/2017/fall/ruthn/eecs112lab2/verif/tb_top.sv(34)
-#    Time: 1002 ns  Iteration: 0  Instance: /tb_top
-# End time: 00:15:51 on Mar 01,2019, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
+# waveform.wlf opened as dataset "waveform"
+add wave -position insertpoint  \
+waveform:/tb_top/tb_WB_Data
+add wave -position insertpoint  \
+waveform:/tb_top/Address
+add wave -position insertpoint  \
+waveform:/tb_top/newadd
+add wave -position insertpoint  \
+waveform:/tb_top/J
+add wave -position insertpoint  \
+waveform:/tb_top/Br
+add wave -position insertpoint  \
+waveform:/tb_top/Z
+add wave -position insertpoint  \
+waveform:/tb_top/B
+add wave -position insertpoint  \
+waveform:/tb_top/riscV/dp/Ext_Imm/Imm_out
