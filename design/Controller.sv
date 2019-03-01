@@ -62,8 +62,8 @@ module Controller(
   assign RegWrite = (Opcode==R_TYPE || Opcode==LW || Opcode == RTypeI || Opcode ==UA || Opcode == UL || Opcode ==Ii || Opcode == J || Opcode == Jr);
   assign MemRead  = (Opcode==LW);
   assign MemWrite = (Opcode==SW);
-  assign ALUOp[0] = (Opcode==SW ||Opcode==LW || Opcode== BR);
-  assign ALUOp[1] = (Opcode==RTypeI ||Opcode==LW);
+  assign ALUOp[0] = (Opcode== BR);
+  assign ALUOp[1] = (Opcode==R_TYPE);
   assign Branch   = (Opcode==BR || Opcode == J || Opcode == Jr);   
   assign Jump     = (Opcode==J || Opcode ==Jr);  
 

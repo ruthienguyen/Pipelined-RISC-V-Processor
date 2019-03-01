@@ -10,24 +10,24 @@ cModel Technology
 Z0 d/users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/design
 vadder
 Z1 DXx6 sv_std 3 std 0 22 WmjPaeP=7F5?QFXzJ>D[Q2
-Z2 !s110 1551426338
+Z2 !s110 1551429820
 !i10b 1
 !s100 ijVXn`j8gkb?JEem_D[5R0
-InRK8jIdhDTKjEFTHV868B1
+I`0Z0i885=9FYME_PkW^0<3
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 !s105 adder_sv_unit
 S1
-Z4 d/users/ugrad/2017/fall/ruthn/eecs112lab2/design
-Z5 w1551155080
-8/users/ugrad/2017/fall/ruthn/eecs112lab2/design/adder.sv
-F/users/ugrad/2017/fall/ruthn/eecs112lab2/design/adder.sv
+Z4 d/users/ugrad/2018/winter/agnesj/eecs112lab2/design
+Z5 w1551154964
+8/users/ugrad/2018/winter/agnesj/eecs112lab2/design/adder.sv
+F/users/ugrad/2018/winter/agnesj/eecs112lab2/design/adder.sv
 L0 3
 Z6 OL;L;10.4c;61
 r1
 !s85 0
 31
-Z7 !s108 1551426338.000000
-Z8 !s107 /users/ugrad/2017/fall/ruthn/eecs112lab2/design/RISC_V.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/Datapath.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/Controller.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/RegFile.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/alu.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/ALUController.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/instructionmemory.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/datamemory.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/mux3.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/mux2.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/imm_Gen.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/flopr.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/and1.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/adder1.sv|/users/ugrad/2017/fall/ruthn/eecs112lab2/design/adder.sv|
+Z7 !s108 1551429820.000000
+Z8 !s107 /users/ugrad/2018/winter/agnesj/eecs112lab2/design/RISC_V.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/Datapath.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/Controller.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/RegFile.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/alu.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/ALUController.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/instructionmemory.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/datamemory.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/mux3.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/mux2.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/imm_Gen.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/flopr.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/and1.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/adder1.sv|/users/ugrad/2018/winter/agnesj/eecs112lab2/design/adder.sv|
 Z9 !s90 -64|-sv|-f|rtl.cfg|
 !i113 0
 Z10 o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
@@ -36,14 +36,14 @@ R1
 R2
 !i10b 1
 !s100 4m:Ko6jKLAjB>b=z^IU>]3
-I=N[>kW=JTQKOdc>elo3?^2
+IOAmVnkkzAWCA6hi[57MMQ0
 R3
 !s105 adder1_sv_unit
 S1
 R4
-w1551412664
-8/users/ugrad/2017/fall/ruthn/eecs112lab2/design/adder1.sv
-F/users/ugrad/2017/fall/ruthn/eecs112lab2/design/adder1.sv
+Z11 w1551428571
+8/users/ugrad/2018/winter/agnesj/eecs112lab2/design/adder1.sv
+F/users/ugrad/2018/winter/agnesj/eecs112lab2/design/adder1.sv
 L0 3
 R6
 r1
@@ -59,14 +59,14 @@ R1
 R2
 !i10b 1
 !s100 5mifb^PbU[W4VlQ_7H[Ri2
-I>R?9mcNin6?f?0c5CzlC`3
+I^I]hmih<MoXY`oiGf=?ce0
 R3
 !s105 alu_sv_unit
 S1
 R4
-w1551424880
-8/users/ugrad/2017/fall/ruthn/eecs112lab2/design/alu.sv
-F/users/ugrad/2017/fall/ruthn/eecs112lab2/design/alu.sv
+R11
+8/users/ugrad/2018/winter/agnesj/eecs112lab2/design/alu.sv
+F/users/ugrad/2018/winter/agnesj/eecs112lab2/design/alu.sv
 L0 25
 R6
 r1
@@ -82,15 +82,15 @@ R1
 R2
 !i10b 1
 !s100 ?^9jzLj8DeWf6ih^MLaNI2
-IoHh<T7S8RCnUBjhJ:T]lX3
+IoODN[jeLbH8^I`ldV2nEX0
 R3
 !s105 ALUController_sv_unit
 S1
 R4
-w1551422998
-8/users/ugrad/2017/fall/ruthn/eecs112lab2/design/ALUController.sv
-F/users/ugrad/2017/fall/ruthn/eecs112lab2/design/ALUController.sv
-Z11 L0 23
+R11
+8/users/ugrad/2018/winter/agnesj/eecs112lab2/design/ALUController.sv
+F/users/ugrad/2018/winter/agnesj/eecs112lab2/design/ALUController.sv
+Z12 L0 23
 R6
 r1
 !s85 0
@@ -106,14 +106,14 @@ R1
 R2
 !i10b 1
 !s100 BV3gc[P8[_YP0_1BX]>jz1
-I;7zRT8T^^nTedQGBUCV]X0
+Ib>[=nicdkD31_5[b12Tnk2
 R3
 !s105 and1_sv_unit
 S1
 R4
-w1551413002
-8/users/ugrad/2017/fall/ruthn/eecs112lab2/design/and1.sv
-F/users/ugrad/2017/fall/ruthn/eecs112lab2/design/and1.sv
+R11
+8/users/ugrad/2018/winter/agnesj/eecs112lab2/design/and1.sv
+F/users/ugrad/2018/winter/agnesj/eecs112lab2/design/and1.sv
 L0 3
 R6
 r1
@@ -128,16 +128,16 @@ vController
 R1
 R2
 !i10b 1
-!s100 ?eNk^JYPQ2O>Y:;kd_<5N2
-I6?@^z3Ri1h<Tk=lY87INd2
+!s100 9<F7@[VP2?QB;VzZgeUO11
+IokFIeze_Nzd]6jjCCK7[h1
 R3
 !s105 Controller_sv_unit
 S1
 R4
-w1551179130
-8/users/ugrad/2017/fall/ruthn/eecs112lab2/design/Controller.sv
-F/users/ugrad/2017/fall/ruthn/eecs112lab2/design/Controller.sv
-Z12 L0 22
+w1551429817
+8/users/ugrad/2018/winter/agnesj/eecs112lab2/design/Controller.sv
+F/users/ugrad/2018/winter/agnesj/eecs112lab2/design/Controller.sv
+Z13 L0 22
 R6
 r1
 !s85 0
@@ -153,14 +153,14 @@ R1
 R2
 !i10b 1
 !s100 jnZAR?6OKKaNBcUbK:ocM3
-IYTKGk?CWJaYBFC>GFM[0o2
+ILU^D0l491X`Tc0PYX<RfX3
 R3
 !s105 datamemory_sv_unit
 S1
 R4
 R5
-8/users/ugrad/2017/fall/ruthn/eecs112lab2/design/datamemory.sv
-F/users/ugrad/2017/fall/ruthn/eecs112lab2/design/datamemory.sv
+8/users/ugrad/2018/winter/agnesj/eecs112lab2/design/datamemory.sv
+F/users/ugrad/2018/winter/agnesj/eecs112lab2/design/datamemory.sv
 L0 3
 R6
 r1
@@ -176,15 +176,15 @@ R1
 R2
 !i10b 1
 !s100 ZN<D]ifXOOYnKA693dmEC0
-IC[aM[6IX_^C18N?CN6WVl3
+IRoEd0CYKEd1]?4aZmYHDG1
 R3
 !s105 Datapath_sv_unit
 S1
 R4
-w1551421143
-8/users/ugrad/2017/fall/ruthn/eecs112lab2/design/Datapath.sv
-F/users/ugrad/2017/fall/ruthn/eecs112lab2/design/Datapath.sv
-R12
+R11
+8/users/ugrad/2018/winter/agnesj/eecs112lab2/design/Datapath.sv
+F/users/ugrad/2018/winter/agnesj/eecs112lab2/design/Datapath.sv
+R13
 R6
 r1
 !s85 0
@@ -200,15 +200,15 @@ R1
 R2
 !i10b 1
 !s100 B6BS^>`X=WIeQVmG9i5VI0
-Il7om8Xe]N;@R`4^O:@LV=1
+IBUhf[NKkALhH<o8FPLA1M3
 R3
 !s105 flopr_sv_unit
 S1
 R4
 R5
-8/users/ugrad/2017/fall/ruthn/eecs112lab2/design/flopr.sv
-F/users/ugrad/2017/fall/ruthn/eecs112lab2/design/flopr.sv
-R11
+8/users/ugrad/2018/winter/agnesj/eecs112lab2/design/flopr.sv
+F/users/ugrad/2018/winter/agnesj/eecs112lab2/design/flopr.sv
+R12
 R6
 r1
 !s85 0
@@ -223,14 +223,14 @@ R1
 R2
 !i10b 1
 !s100 d:kb2BVlJh1dOcc]CN<fW3
-Ifd7WZGb6nN9Yo1nBOmXo83
+Il_@O5LaOhZo8<kZo82GTj2
 R3
 !s105 imm_Gen_sv_unit
 S1
 R4
-w1551167619
-8/users/ugrad/2017/fall/ruthn/eecs112lab2/design/imm_Gen.sv
-F/users/ugrad/2017/fall/ruthn/eecs112lab2/design/imm_Gen.sv
+w1551163434
+8/users/ugrad/2018/winter/agnesj/eecs112lab2/design/imm_Gen.sv
+F/users/ugrad/2018/winter/agnesj/eecs112lab2/design/imm_Gen.sv
 L0 31
 R6
 r1
@@ -247,15 +247,15 @@ R1
 R2
 !i10b 1
 !s100 mk^2clj@lGo:B1l_>ANIC1
-Ie`LiQ4j:Jnfd6Ua;I`MEI0
+Iko9U@L_ZDOXXG4HUm7f><0
 R3
 !s105 instructionmemory_sv_unit
 S1
 R4
-w1551420771
-8/users/ugrad/2017/fall/ruthn/eecs112lab2/design/instructionmemory.sv
-F/users/ugrad/2017/fall/ruthn/eecs112lab2/design/instructionmemory.sv
 R11
+8/users/ugrad/2018/winter/agnesj/eecs112lab2/design/instructionmemory.sv
+F/users/ugrad/2018/winter/agnesj/eecs112lab2/design/instructionmemory.sv
+R12
 R6
 r1
 !s85 0
@@ -270,15 +270,15 @@ R1
 R2
 !i10b 1
 !s100 @X6>V^M3YMfab:XdY67SE1
-I<z>4bUlA;dnZRQGfUOfgV2
+I<6V^0[Dmkni]<JRfj_RXo1
 R3
 !s105 mux2_sv_unit
 S1
 R4
 R5
-8/users/ugrad/2017/fall/ruthn/eecs112lab2/design/mux2.sv
-F/users/ugrad/2017/fall/ruthn/eecs112lab2/design/mux2.sv
-R11
+8/users/ugrad/2018/winter/agnesj/eecs112lab2/design/mux2.sv
+F/users/ugrad/2018/winter/agnesj/eecs112lab2/design/mux2.sv
+R12
 R6
 r1
 !s85 0
@@ -293,15 +293,15 @@ R1
 R2
 !i10b 1
 !s100 i17PndEl7zRA@YnaNJF1j2
-I[AQ_l90SilQAZlfg6bk_@1
+Ij1^1c@_WlBn9oRX]zVT:O1
 R3
 !s105 mux3_sv_unit
 S1
 R4
-w1551413891
-8/users/ugrad/2017/fall/ruthn/eecs112lab2/design/mux3.sv
-F/users/ugrad/2017/fall/ruthn/eecs112lab2/design/mux3.sv
 R11
+8/users/ugrad/2018/winter/agnesj/eecs112lab2/design/mux3.sv
+F/users/ugrad/2018/winter/agnesj/eecs112lab2/design/mux3.sv
+R12
 R6
 r1
 !s85 0
@@ -316,14 +316,14 @@ R1
 R2
 !i10b 1
 !s100 2cGb6>@mnQP5YGGLJFYg]1
-I;jHQBWhkOY[=jO3=oj23K0
+I_jBk`Q=<8X^5W0KkWVA:b0
 R3
 !s105 RegFile_sv_unit
 S1
 R4
 R5
-8/users/ugrad/2017/fall/ruthn/eecs112lab2/design/RegFile.sv
-F/users/ugrad/2017/fall/ruthn/eecs112lab2/design/RegFile.sv
+8/users/ugrad/2018/winter/agnesj/eecs112lab2/design/RegFile.sv
+F/users/ugrad/2018/winter/agnesj/eecs112lab2/design/RegFile.sv
 L0 3
 R6
 r1
@@ -340,14 +340,14 @@ R1
 R2
 !i10b 1
 !s100 6E52DWg9@MYa?NBn;QNRH2
-IPNJJ0]z^cOnbebLha:g6W1
+I>onl4PKZV2Bg;e8lZkOkn1
 R3
 !s105 RISC_V_sv_unit
 S1
 R4
-w1551417913
-8/users/ugrad/2017/fall/ruthn/eecs112lab2/design/RISC_V.sv
-F/users/ugrad/2017/fall/ruthn/eecs112lab2/design/RISC_V.sv
+R11
+8/users/ugrad/2018/winter/agnesj/eecs112lab2/design/RISC_V.sv
+F/users/ugrad/2018/winter/agnesj/eecs112lab2/design/RISC_V.sv
 L0 3
 R6
 r1
@@ -360,34 +360,89 @@ R9
 R10
 vtb_alu
 R1
-!s110 1551425527
+!s110 1551428589
 !i10b 1
-!s100 lKnU1iG=JMNWg;EV3jKcO3
-IC6<gD<^QbAIUD]USOWe7D3
+!s100 VCQHR1CTzi1=RD7:I1M3:1
+ICjM_fA=]kL:4RK^WY@Y@a1
 R3
 !s105 tb_alu_sv_unit
 S1
 R4
-w1551425518
-8/users/ugrad/2017/fall/ruthn/eecs112lab2/verif/tb_alu.sv
-F/users/ugrad/2017/fall/ruthn/eecs112lab2/verif/tb_alu.sv
+R11
+8/users/ugrad/2018/winter/agnesj/eecs112lab2/verif/tb_alu.sv
+F/users/ugrad/2018/winter/agnesj/eecs112lab2/verif/tb_alu.sv
 L0 3
 R6
 r1
 !s85 0
 31
-!s108 1551425527.000000
-!s107 /users/ugrad/2017/fall/ruthn/eecs112lab2/verif/tb_alu.sv|
-Z13 !s90 -64|-sv|-f|tb.cfg|-work|work|
+!s108 1551428589.000000
+!s107 /users/ugrad/2018/winter/agnesj/eecs112lab2/verif/tb_alu.sv|
+Z14 !s90 -64|-sv|-f|tb.cfg|-work|work|
 !i113 0
-Z14 o-sv -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z15 o-sv -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 Ttb_alu_opt
-R2
-VV77I]@4V@XRcUS1GPGD0e2
+!s110 1551428590
+V84SKPO;P]jQ36D@7>70k01
 04 6 4 work tb_alu fast 0
-Z15 o+acc -work work
+Z16 o+acc -work work
 ntb_alu_opt
-Z16 OL;O;10.4c;61
+Z17 OL;O;10.4c;61
+R0
+vtb_Controller
+R1
+!s110 1551429243
+!i10b 1
+!s100 :oSG4?1z^U_EW;G@k1FaY2
+I;adKSeYGoTW:`jB]1@FIJ1
+R3
+Z18 !s105 tb_controller_sv_unit
+S1
+R4
+w1551428926
+Z19 8/users/ugrad/2018/winter/agnesj/eecs112lab2/verif/tb_controller.sv
+Z20 F/users/ugrad/2018/winter/agnesj/eecs112lab2/verif/tb_controller.sv
+L0 5
+R6
+r1
+!s85 0
+31
+!s108 1551429243.000000
+Z21 !s107 /users/ugrad/2018/winter/agnesj/eecs112lab2/verif/tb_controller.sv|
+R14
+!i113 0
+R15
+ntb_@controller
+vtb_controller
+R1
+R2
+!i10b 1
+!s100 hB65<G:nE8B[UHQ22?]363
+InQhXPR;GT6`MX<^:8XH?X1
+R3
+R18
+S1
+R4
+w1551429682
+R19
+R20
+L0 5
+R6
+r1
+!s85 0
+31
+R7
+R21
+R14
+!i113 0
+R15
+Ttb_controller_opt
+R2
+V@=GiNlAbNE]D0N3OGPGin2
+04 13 4 work tb_controller fast 0
+R16
+ntb_controller_opt
+R17
 vtb_top
 R1
 !s110 1551079167
@@ -408,14 +463,14 @@ r1
 31
 !s108 1551079167.000000
 !s107 /users/ugrad/2018/winter/agnesj/LabsUpdatedGithub/Labs/Lab3/Lab_Files/verif/tb_top.sv|
-R13
-!i113 0
 R14
+!i113 0
+R15
 Ttb_top_opt
 !s110 1551164066
 VPdL?8UXM<QYmo@RL@8H_J1
 04 6 4 work tb_top fast 0
-R15
-ntb_top_opt
 R16
+ntb_top_opt
+R17
 R0

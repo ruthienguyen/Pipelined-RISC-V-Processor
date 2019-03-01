@@ -1,5 +1,5 @@
-# vsim -c tb_alu_opt -do "sim.do" 
-# Start time: 23:45:39 on Feb 28,2019
+# vsim -c tb_controller_opt -do "sim.do" 
+# Start time: 00:43:41 on Mar 01,2019
 # //  Questa Sim-64
 # //  Version 10.4c linux_x86_64 Jul 19 2015
 # //
@@ -16,35 +16,42 @@
 # //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
 # //
 # Loading sv_std.std
-# Loading work.tb_alu(fast)
-# Loading work.alu(fast)
+# Loading work.tb_controller(fast)
+# Loading work.Controller(fast)
 # do sim.do
 # waveform.wlf
-# begin ALU test 
+# begin controller test
 # 
-# "Works: 0" means it worked
+# LUI:0110111
+# ALUSrc:1, MemtoReg:0, RegWrite:1, MemRead:0, MemWrite:0, Branch:0, ALUOp:00
 # 
-# 00010001001111000010110111100100 AND 11111011000010110100100001110111 = 00010001000010000000100001100100; Works:         0
-# zero: 0
-# 00010001001111000010110111100100 OR 11111011000010110100100001110111 = 11111011001111110110110111110111; Works:         0
-# zero: 0
-# 00010001001111000010110111100100 ADD 11111011000010110100100001110111 = 00001100010001110111011001011011; Works:         0
-# zero: 0
-# 00010001001111000010110111100100 XOR 11111011000010110100100001110111 = 11101010001101110110010110010011; Works:         0
-# zero: 0
-# 00010001001111000010110111100100 SUB 11111011000010110100100001110111 = 00010110001100001110010101101101; Works:         0
-# zero: 0
-# 00010001001111000010110111100100 SHIFT LEFT LOGICAL 00000000000000000000000000001010 = 11110000101101111001000000000000; Works:         0
-# zero: 0
-# 00010001001111000010110111100100 SHIFT RIGHT LOGICAL 00000000000000000000000000001010 = 00000000000001000100111100001011; Works:         0
-# zero: 0
-# 00010001001111000010110111100100 COMP SIGNED 11111011000010110100100001110111 = 00000000000000000000000000000000; Works:         0
-# zero: 0
-# 00010001001111000010110111100100 COMP UNSIGNED 11111011000010110100100001110111 = 00000000000000000000000000000001; Works:         0
-# 11111011000010110100100001110111 SHIFT RIGHT ARITHMETIC 00000000000000000000000000001010 = 11111111111111101100001011010010; Works:          0
-# ** Note: $stop    : /users/ugrad/2017/fall/ruthn/eecs112lab2/verif/tb_alu.sv(77)
-#    Time: 208 ns  Iteration: 0  Instance: /tb_alu
-# Break in Module tb_alu at /users/ugrad/2017/fall/ruthn/eecs112lab2/verif/tb_alu.sv line 77
-# Stopped at /users/ugrad/2017/fall/ruthn/eecs112lab2/verif/tb_alu.sv line 77
-# End time: 23:45:39 on Feb 28,2019, Elapsed time: 0:00:00
+# AUIPC:0010111
+# ALUSrc:1, MemtoReg:0, RegWrite:1, MemRead:0, MemWrite:0, Branch:0, ALUOp:00
+# 
+# JAL:1101111
+# ALUSrc:1, MemtoReg:0, RegWrite:1, MemRead:0, MemWrite:0, Branch:1, ALUOp:00
+# 
+# JALR:1100111
+# ALUSrc:1, MemtoReg:0, RegWrite:1, MemRead:0, MemWrite:0, Branch:1, ALUOp:00
+# 
+# B Type:1100011
+# ALUSrc:0, MemtoReg:0, RegWrite:0, MemRead:0, MemWrite:0, Branch:1, ALUOp:01
+# 
+# Load:0000011
+# ALUSrc:1, MemtoReg:1, RegWrite:1, MemRead:1, MemWrite:0, Branch:0, ALUOp:00
+# 
+# Save:0100011
+# ALUSrc:1, MemtoReg:0, RegWrite:0, MemRead:0, MemWrite:1, Branch:0, ALUOp:00
+# 
+# I Type:0010011
+# ALUSrc:1, MemtoReg:0, RegWrite:1, MemRead:0, MemWrite:0, Branch:0, ALUOp:00
+# 
+# R Type:0110011
+# ALUSrc:0, MemtoReg:0, RegWrite:1, MemRead:0, MemWrite:0, Branch:0, ALUOp:10
+# 
+# ** Note: $stop    : /users/ugrad/2018/winter/agnesj/eecs112lab2/verif/tb_controller.sv(85)
+#    Time: 200 ns  Iteration: 0  Instance: /tb_controller
+# Break in Module tb_controller at /users/ugrad/2018/winter/agnesj/eecs112lab2/verif/tb_controller.sv line 85
+# Stopped at /users/ugrad/2018/winter/agnesj/eecs112lab2/verif/tb_controller.sv line 85
+# End time: 00:43:41 on Mar 01,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
