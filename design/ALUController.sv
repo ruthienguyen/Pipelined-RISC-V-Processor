@@ -35,29 +35,43 @@ module ALUController(
     begin 
         case(Funct3) 
         3'b000: begin//sub or add
-                    if (Funct7==7'b0000000 && ALUOp==2'b10)
-                        Operation = 4'b0010; //add
+                    if ((Funct7==7'b0000000 && ALUOp==2'b10 ) || ALUOp==2'b00 || ALUOp==2'b11)
+                        Operation = 4'b0010; //add, lb, addi
                     else if ((Funct7==7'b0100000 && ALUOp==2'b10) || (ALUOp==2'b01))
                         Operation = 4'b0110; //sub and beq
                 end
         3'b001: begin//sll
-                    if(Funct7==7'b0000000 && ALUOp==2'b10)
+                    if(Funct7==7'b0000000 && (ALUOp==2'b10)
                         Operation = 4'b0111;
                     else if (ALUOp==2'b01)
                         Operation = 4'b0110; //bne
+                    else if (ALUOp==2'b00)
+                        Operation = 4'b0010; // lh
+                    else if (Funct7==7'b0000000 && ALUOp==2'b11)
+                        Operation = 4'b0111; //slli
                 end
         3'b010: begin//slt
                     if (Funct7==7'b0000000 && ALUOp==2'b10)
                         Operation = 4'b1001;
+                    else if (ALUOp==2'b00)
+                        Operation = 4'b0010; // lw
+                    else if (ALUOp==2'b11)
+                        Operation = 4'b0111; // slti
                 end
         3'b100: begin//xor
                     if (Funct7==7'b0000000 && ALUOp==2'b10)
                         Operation = 4'b0011;
                     else if (ALUOp==2'b01)
                         Operation = 4'b1001; //blt
+                    else if (ALUOp==2'b00)
+                        Operation = 4'b0010; //lbu
+                    else if (ALUOp==2'b11)
+                        Operation = 4'b0011; // xori
                 end
         3'b011: begin//sltu
                     if (Funct7==7'b0000000 && ALUOp==2'b10)
+                        Operation = 4'b1010;
+                    else if (ALUOp==2'b11)
                         Operation = 4'b1010;
                 end
         3'b101: begin//srl or sra
@@ -67,18 +81,28 @@ module ALUController(
                         Operation = 4'b1011; //sra
                     else if (ALUOp==2'b01)
                         Operation = 4'b1100; //bge
+                    else if (ALUOp==2'b00)
+                        Operation = 4'b0010; //lhu
+                    else if (Funct7=7'b0000000 && ALUOp==2'b11)
+                        Operation = 4'b1000; //srli
+                    else if (Funct7=7'b0100000 && ALUOp==2'b11)
+                        Operation = 4'b1011; //srai
                 end
         3'b110: begin//or
                     if (Funct7==7'b0000000 && ALUOp==2'b01)
                         Operation = 4'b0001;
                     else if (ALUOp==2'b01)
                         Operation = 4'b1010; //bltu
+                    else if (ALUOp==2'b11)
+                        Operation = 4'b0001; // ori
                 end
         3'b111: begin//and
                     if (Funct7==7'b0000000 && ALUOp==2'b00)
                         Operation = 4'b0000;
                     else if (ALUOp==2'b01)
                         Operation = 4'b1101; //bgeu
+                    else if (ALUOp==2'b11)
+                        Operation = 4'b0000; //andi
                 end
         endcase 
      end 
