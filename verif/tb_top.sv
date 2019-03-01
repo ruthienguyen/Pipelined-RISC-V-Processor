@@ -6,7 +6,7 @@ module tb_top;
   logic tb_clk, reset;
   logic [31:0] tb_WB_Data;
   logic [31:0] Address;
-  logic [8:0] newadd; 
+  logic [31:0] newadd; 
   logic J,Br,Z,B; 
     //clock generation
   always #10 tb_clk = ~tb_clk;
@@ -35,7 +35,7 @@ module tb_top;
     $readmemh ( "$verif/program/inst.bin" , riscV.dp.instr_mem.Inst_mem);
     
 
-    #1000;
+    #10000;
     $finish;
    end
 endmodule

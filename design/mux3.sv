@@ -23,8 +23,8 @@
 module mux3
     #(parameter WIDTH = 9,
       parameter DATA_W = 32)
-    (input logic [WIDTH-1:0] d0,d1,
-     input logic [DATA_W-1:0] d2,
+    (input logic [WIDTH-1:0] d0,
+     input logic [DATA_W-1:0] d1,d2,
      input logic s1,s0,
      output logic [WIDTH-1:0] y);
 

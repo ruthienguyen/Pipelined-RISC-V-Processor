@@ -19,15 +19,3 @@ add wave -position insertpoint  \
 waveform:/tb_top/tb_WB_Data
 add wave -position insertpoint  \
 waveform:/tb_top/Address
-add wave -position insertpoint  \
-waveform:/tb_top/newadd
-add wave -position insertpoint  \
-waveform:/tb_top/J
-add wave -position insertpoint  \
-waveform:/tb_top/Br
-add wave -position insertpoint  \
-waveform:/tb_top/Z
-add wave -position insertpoint  \
-waveform:/tb_top/B
-add wave -position insertpoint  \
-waveform:/tb_top/riscV/dp/Ext_Imm/Imm_out

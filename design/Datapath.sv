@@ -39,17 +39,18 @@ module Datapath #(
     output logic [2:0] Funct3,
     output logic [DATA_W-1:0] WB_Data,//ALU_Result
     output logic [DATA_W-1:0] Address,//ALU_Result
-    output logic [PC_W-1:0] newadd,//ALU_Result
+    output logic [DATA_W-1:0] newadd,//ALU_Result
     output logic J,Br,Z,B //ALU_Result
 
     );
 
-logic [PC_W-1:0] PC, PCPlus4,NewAdd,PCAddress;
+logic [PC_W-1:0] PC, PCPlus4,PCAddress;
 logic [INS_W-1:0] Instr;
 logic [DATA_W-1:0] Result;
 logic [DATA_W-1:0] Reg1, Reg2;
 logic [DATA_W-1:0] ReadData;
 logic [DATA_W-1:0] SrcB, ALUResult;
+logic [DATA_W-1:0] NewAdd;
 logic Zero,BResult;
 logic [DATA_W-1:0] ExtImm;
 logic count; 
@@ -70,7 +71,8 @@ logic count;
     RegFile rf(clk, reset, RegWrite, Instr[11:7], Instr[19:15], Instr[24:20],
             Result, Reg1, Reg2);
             
-    mux4 resmux(ALUResult, ReadData, PCPlus4, PCr, MemtoReg, Result);
+    //chooses whether aluresult, data from mem, pc+4, or auipc gets written back        
+    mux4 resmux(ALUResult, ReadData, PCPlus4,  NewAdd, PCr, MemtoReg, Result);
 
 //// sign extend
     imm_Gen Ext_Imm (Instr,ExtImm);
@@ -91,6 +93,6 @@ logic count;
     assign Address = PCAddress/4;
     
 ////// Data memory 
-	datamemory data_mem (clk, MemRead, MemWrite, ALUResult[DM_ADDRESS-1:0], Reg2, ReadData);
+	datamemory data_mem (clk, MemRead, MemWrite,Funct3, ALUResult[DM_ADDRESS-1:0], Reg2, ReadData);
      
 endmodule

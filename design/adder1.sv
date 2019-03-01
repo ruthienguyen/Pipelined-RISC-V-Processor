@@ -5,7 +5,7 @@ module adder1
       parameter DATA_W = 32)
     (input logic [WIDTH-1:0] a,
      input logic [DATA_W-1:0] b,
-     output logic [WIDTH-1:0] y);
+     output logic [DATA_W-1:0] y);
 
 logic [DATA_W-1:0] PCext; 
 

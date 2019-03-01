@@ -59,7 +59,7 @@ module Controller(
 
 
   assign ALUSrc   = (Opcode==LW || Opcode==SW || Opcode == RTypeI || Opcode == UA || Opcode == UL || Opcode == Ii || Opcode == J || Opcode == Jr);
-  assign MemtoReg = (Opcode==LW);
+  assign MemtoReg = (Opcode==LW || Opcode == UA);
   assign RegWrite = (Opcode==R_TYPE || Opcode==LW || Opcode == RTypeI || Opcode ==UA || Opcode == UL || Opcode ==Ii || Opcode == J || Opcode == Jr);
   assign MemRead  = (Opcode==LW);
   assign MemWrite = (Opcode==SW);
@@ -67,6 +67,6 @@ module Controller(
   assign ALUOp[1] = (Opcode==R_TYPE || Opcode == Ii);
   assign Branch   = (Opcode==BR || Opcode == J);   
   assign Jump     = ( Opcode ==Jr);  
-  assign PCr      = (Opcode == J || Opcode == Jr); 
+  assign PCr      = (Opcode == J || Opcode == Jr || Opcode==UA); 
 
 endmodule
