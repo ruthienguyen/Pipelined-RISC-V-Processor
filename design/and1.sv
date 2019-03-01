@@ -1,7 +1,8 @@
 `timescale 1ns / 1ps
 
 module and1
-    (input logic  a, b,
+    (input logic  a,
+     input logic b,
      output logic  y);
 
 

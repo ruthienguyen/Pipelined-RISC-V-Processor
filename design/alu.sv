@@ -36,27 +36,25 @@ module alu#(
     
         always_comb
         begin
-	    Zero = 1'b0;
+      	    Zero = 1'b0;
             ALUResult = 'd0;
             case(Operation)
             4'b0000:        // AND
                     ALUResult = SrcA & SrcB;
             4'b0001:        //OR
                     ALUResult = SrcA | SrcB;
-            4'b0010: begin       //ADD 
+            4'b0010:       //ADD 
                     ALUResult = SrcA + SrcB;
-		    Zero = 1'b1;
-                    end
-	    4'b0011:        //XOR
+	          4'b0011:        //XOR
 	            ALUResult = SrcA^SrcB;
             4'b0110:        //Subtract
                     ALUResult = $signed(SrcA) - $signed(SrcB);
-        // add these to ALU control
             4'b0111:        //SLL
                     ALUResult = SrcA << SrcB;
             4'b1000:        //SRL
                     ALUResult = SrcA >> SrcB;
-            4'b1001: begin       //SLT
+            4'b1001:
+            begin       //SLT && blt
                     if ($signed(SrcA) < $signed(SrcB))
                         begin
                             Zero = 1'b1;
@@ -67,8 +65,9 @@ module alu#(
                             Zero = 1'b0;
                             ALUResult = 1'b0;
                         end
-	   	    end
-            4'b1010: begin      //SLTU
+	   	      end
+            4'b1010:
+            begin      //SLTU && bltu
                     if (SrcA < SrcB)
                         begin
                             Zero = 1'b1;
@@ -79,23 +78,24 @@ module alu#(
                             Zero = 1'b0;
                             ALUResult = 1'b0;
                         end
-		    end
+		        end
             4'b1011:       //SRA
                     ALUResult = $signed(SrcA) >>> SrcB;
-            4'b1100: begin      //BGE
-		    if ($signed(SrcA) >= $signed(SrcB)) 
+            4'b1100:
+            begin      //BGE
+		                if ($signed(SrcA) >= $signed(SrcB)) 
                     	Zero = 1'b1; 
-                    else 
-                    	Zero = 1'b0;
-                    end
-            4'b1101: begin      //BGEU
+            end
+            4'b1101:
+            begin      //BGEU
                     if (SrcA >= SrcB) 
                     	Zero = 1'b1; 
-                    else 
-                  	Zero = 1'b0;
-                    end
+            end
             default:
+            begin
+                    Zero = 1'b0;
                     ALUResult = 'b0;
+            end 
             endcase
         end
 endmodule

@@ -32,26 +32,29 @@ module Datapath #(
     RegWrite , MemtoReg ,     // Register file writing enable   // Memory or ALU MUX
     ALUsrc , MemWrite ,       // Register file or Immediate MUX // Memroy Writing Enable
     MemRead , Branch               // Memroy Reading Enable // branch taken or not
-    , Jump                    //jal or jalr
+    , Jump,                    //jal or jalr
     input logic [ ALU_CC_W -1:0] ALU_CC, // ALU Control Code ( input of the ALU )
     output logic [6:0] opcode,
     output logic [6:0] Funct7,
     output logic [2:0] Funct3,
-    output logic [DATA_W-1:0] WB_Data //ALU_Result
+    output logic [DATA_W-1:0] WB_Data,//ALU_Result
+    output logic [DATA_W-1:0] Address //ALU_Result
     );
 
-logic [PC_W-1:0] PC, PCPlus4;
+logic [PC_W-1:0] PC, PCPlus4,NewAdd,PCAddress;
 logic [INS_W-1:0] Instr;
 logic [DATA_W-1:0] Result;
 logic [DATA_W-1:0] Reg1, Reg2;
 logic [DATA_W-1:0] ReadData;
 logic [DATA_W-1:0] SrcB, ALUResult;
-logic Zero;
+logic Zero,BResult;
 logic [DATA_W-1:0] ExtImm;
+logic count; 
 
 // next PC
     adder #(9) pcadd (PC, 9'b100, PCPlus4);
-    flopr #(9) pcreg(clk, reset, PCPlus4, PC);
+    flopr #(9) pcreg(clk, reset, PCAddress, PC);
+    
 
  //Instruction memory
     instructionmemory instr_mem (PC, Instr);
@@ -72,11 +75,12 @@ logic [DATA_W-1:0] ExtImm;
 //// ALU
     mux2 #(32) srcbmux(Reg2, ExtImm, ALUsrc, SrcB);
     alu alu_module(Reg1, SrcB, ALU_CC, ALUResult, Zero);
-    // and1 #(9) andb(Branch, Zero, Bresult); 
-   // adder1 newpcadd(PC,ExtImm,Sum); 
-   // mux3 #(32) pcmux(PCPlus4,Sum, ALUResult,Jump,Bresult,PCAddress); 
+    and1  andb(Branch, Zero, Bresult); 
+    adder1 newpcadd(PC,ExtImm,NewAdd); 
+    mux3 pcmux(PCPlus4,NewAdd, ALUResult,Jump,Bresult,PCAddress); 
     
     assign WB_Data = Result;
+    assign Address = PCAddress;
     
 ////// Data memory 
 	datamemory data_mem (clk, MemRead, MemWrite, ALUResult[DM_ADDRESS-1:0], Reg2, ReadData);

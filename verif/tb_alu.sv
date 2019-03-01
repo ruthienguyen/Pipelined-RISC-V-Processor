@@ -26,35 +26,47 @@ module tb_alu;
     $display("begin ALU test \n");
     $display("\"Works: 0\" means it worked\n");
 
-    SrcA = 32'b00010001001111000010110111100100;
-    SrcB = 32'b11111011000010110100100001110111;
-
+    //SrcA = 32'b00010001001111000010110111100100;
+    //SrcB = 32'b11111011000010110100100001110111;
+    SrcA = 32'b00000000000000000000000000000100;
+    SrcB = 32'b00000000000000000000000000000101;
     #5 Operation = 4'b0000; // AND
     #5 $display("%b AND %b = %b; Works:", SrcA, SrcB, ALUResult, ALUResult - (SrcA & SrcB));
+    #1 $display("zero: %b", Zero);
+    #1 $display("ALUResult: %d", ALUResult);
 
     #5 Operation = 4'b0001; // OR
-    #5 $display("%b OR %b = %b; Works:", SrcA, SrcB, ALUResult, ALUResult - (SrcA | SrcB));
+    #5 $display("%b OR %b = %h; Works:", SrcA, SrcB, ALUResult, ALUResult - (SrcA | SrcB));
+    #1 $display("zero: %b", Zero);
+    #1 $display("ALUResult: %d", ALUResult);
 
     #5 Operation = 4'b0010; // ADD
     #5 $display("%b ADD %b = %b; Works:", SrcA, SrcB, ALUResult, ALUResult - (SrcA + SrcB));
+    #1 $display("zero: %b", Zero);
 
     #5 Operation = 4'b0011; // XOR
     #5 $display("%b XOR %b = %b; Works:", SrcA, SrcB, ALUResult, ALUResult - (SrcA ^ SrcB));
+    #1 $display("zero: %b", Zero);
 
     #5 Operation = 4'b0110; // SUB
-    #5 $display("%b SUB %b = %b; Works:", SrcA, SrcB, ALUResult, ALUResult - ($signed(SrcA) - $signed(SrcB)));
+    #5 $display("%b SUB %b = %h; Works:", SrcA, SrcB, ALUResult, ALUResult - ($signed(SrcA) - $signed(SrcB)));
+    #1 $display("zero: %b", Zero);
+    #1 $display("ALUResult: %d", ALUResult);
 
     #5 Operation = 4'b0111; // SLL
     SrcB = 32'b00000000000000000000000000001010;
     #5 $display("%b SHIFT LEFT LOGICAL %b = %b; Works:", SrcA, SrcB, ALUResult, ALUResult - (SrcA << 10)); //not sure if we should be using 10...?
+    #1 $display("zero: %b", Zero);
 
     #5 Operation = 4'b1000; // SRL
     #5 $display("%b SHIFT RIGHT LOGICAL %b = %b; Works:", SrcA, SrcB, ALUResult, ALUResult - (SrcA >> 10));
+    #1 $display("zero: %b", Zero);
 
     #5 Operation = 4'b1001; // SLT
     SrcA = 32'b00010001001111000010110111100100;
     SrcB = 32'b11111011000010110100100001110111; // should return 0 because SrcB is negative when signed
     #5 $display("%b COMP SIGNED %b = %b; Works:", SrcA, SrcB, ALUResult, ALUResult - 32'b00000000000000000000000000000000);
+    #1 $display("zero: %b", Zero);
 
     #5 Operation = 4'b1010; // SLTU
     SrcA = 32'b00010001001111000010110111100100;
@@ -66,7 +78,7 @@ module tb_alu;
     SrcB = 32'b00000000000000000000000000001010;
     #5 $display("%b SHIFT RIGHT ARITHMETIC %b = %b; Works:", SrcA, SrcB, ALUResult, $signed(ALUResult) - ($signed(SrcA) >>> 10));
 
-    #100 $stop;
+    #150 $stop;
 
   end
   

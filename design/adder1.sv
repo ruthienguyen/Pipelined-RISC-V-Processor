@@ -1,11 +1,16 @@
 `timescale 1ns / 1ps
 
-module adder
-    #(parameter WIDTH = 8)
+module adder1
+    #(parameter WIDTH = 9, 
+      parameter DATA_W = 32)
     (input logic [WIDTH-1:0] a,
-     input logic [31:0] b,
-     output logic [31:0] y);
+     input logic [DATA_W-1:0] b,
+     output logic [WIDTH-1:0] y);
 
+logic [DATA_W-1:0] PCext; 
+
+//extend pc to add to extimm
+assign PCext = {23'b0,a}; 
 
 assign y = a + b;
 

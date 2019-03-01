@@ -21,12 +21,19 @@
 
 
 module mux3
-    #(parameter WIDTH = 32)
-    (input logic [WIDTH-1:0] d0, d1,d2,
+    #(parameter WIDTH = 9,
+      parameter DATA_W = 32)
+    (input logic [WIDTH-1:0] d0,d1,
+     input logic [DATA_W-1:0] d2,
      input logic s1,s0,
      output logic [WIDTH-1:0] y);
 
-assign y = s1 ? (s0 ? d2 : d0) :
+
+logic [WIDTH-1:0] lowerALU; 
+
+//take lower 9 bits of ALUresult
+assign lowerALU = d2[WIDTH-1:0];
+assign y = s1 ? (s0 ? lowerALU : d0) :
                 (s0 ? d1 : d0) ;
 
 endmodule

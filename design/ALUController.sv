@@ -37,12 +37,14 @@ module ALUController(
         3'b000: begin//sub or add
                     if (Funct7==7'b0000000 && ALUOp==2'b10)
                         Operation = 4'b0010; //add
-                    else if (Funct7==7'b0100000 && (ALUOp==2'b10||ALUOp==2'b01))
+                    else if ((Funct7==7'b0100000 && ALUOp==2'b10) || (ALUOp==2'b01))
                         Operation = 4'b0110; //sub and beq
                 end
         3'b001: begin//sll
-                    if (Funct7==7'b0000000 && ALUOp==2'b10)
+                    if(Funct7==7'b0000000 && ALUOp==2'b10)
                         Operation = 4'b0111;
+                    else if (ALUOp==2'b01)
+                        Operation = 4'b0110; //bne
                 end
         3'b010: begin//slt
                     if (Funct7==7'b0000000 && ALUOp==2'b10)
@@ -51,6 +53,8 @@ module ALUController(
         3'b100: begin//xor
                     if (Funct7==7'b0000000 && ALUOp==2'b10)
                         Operation = 4'b0011;
+                    else if (ALUOp==2'b01)
+                        Operation = 4'b1001; //blt
                 end
         3'b011: begin//sltu
                     if (Funct7==7'b0000000 && ALUOp==2'b10)
@@ -61,14 +65,20 @@ module ALUController(
                         Operation = 4'b1000; //srl
                     else if (Funct7==7'b0100000 && ALUOp==2'b10)
                         Operation = 4'b1011; //sra
+                    else if (ALUOp==2'b01)
+                        Operation = 4'b1100; //bge
                 end
         3'b110: begin//or
                     if (Funct7==7'b0000000 && ALUOp==2'b01)
                         Operation = 4'b0001;
+                    else if (ALUOp==2'b01)
+                        Operation = 4'b1010; //bltu
                 end
         3'b111: begin//and
                     if (Funct7==7'b0000000 && ALUOp==2'b00)
                         Operation = 4'b0000;
+                    else if (ALUOp==2'b01)
+                        Operation = 4'b1101; //bgeu
                 end
         endcase 
      end 
