@@ -119,12 +119,12 @@ module alu#(
                     if (SrcA != SrcB) 
                      begin
                     	Zero = 1'b1; 
-                      ALUResult = 1'b1; 
+                      ALUResult = SrcA - SrcB; 
                     end
                     else
                         begin
                             Zero = 1'b0;
-                            ALUResult = 1'b0;
+                            ALUResult = SrcA - SrcB;
                         end
             end
             default:

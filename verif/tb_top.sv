@@ -1,13 +1,10 @@
 `timescale 1ns / 1ps
-
 module tb_top;
 
 //clock and reset signal declaration
   logic tb_clk, reset;
   logic [31:0] tb_WB_Data;
   logic [31:0] Address;
-  logic [31:0] newadd; 
-  logic J,Br,Z,B; 
     //clock generation
   always #10 tb_clk = ~tb_clk;
   
@@ -23,19 +20,17 @@ module tb_top;
       .clk(tb_clk),
       .reset(reset),
       .WB_Data(tb_WB_Data),      
-      .Address(Address),      
-      .newadd(newadd), //ALU_Result
-      .J(J),
-      .Br(Br),
-      .Z(Z),
-      .B(B) //ALU_Result
+      .Address(Address)      
      );
 
   initial begin
     $readmemh ( "$verif/program/inst.bin" , riscV.dp.instr_mem.Inst_mem);
     
 
-    #10000;
-    $finish;
+    //#10000;
+    //$finish;
+
+    #15000
+    $stop;
    end
 endmodule

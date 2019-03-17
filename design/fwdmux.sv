@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 01/07/2018 10:19:34 PM
+// Create Date: 01/07/2018 10:21:50 PM
 // Design Name: 
-// Module Name: flopr
+// Module Name: mux2
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,14 +20,14 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module flopr#
-    (parameter WIDTH = 8)
-    (input logic clk, reset, PCWrite,
-     input logic [WIDTH-1:0] d,
-     output logic [WIDTH-1:0] q);
+module fwdmux
+    #(parameter DATA_W = 32)
+    (input logic [DATA_W-1:0] d0,d1,d2,
+     input logic s1,s0,
+     output logic [DATA_W-1:0] y);
 
-always_ff @(posedge clk, posedge reset)
-    if (reset) q <= 0;
-    else if (!PCWrite) q <= d;
-    
+
+assign y = s1 ? (s0 ? d0 : d1) :
+                (s0 ? d2 : d0) ;
+
 endmodule

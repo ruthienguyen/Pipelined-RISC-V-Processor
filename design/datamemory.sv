@@ -14,20 +14,20 @@ module datamemory#(
     );
     
     logic [DATA_W-1:0] mem [(2**DM_ADDRESS)-1:0];
-    logic [DATA_W:0] b,l,s; 
+    logic [DATA_W-1:0] b,l,s; 
     
     always_comb 
     begin
-       if(MemRead)
+       if(MemRead) begin
             //LHU 
             l = mem[a];
             case(funct3) 
             3'b000: //lb
-                  b = {l[31]? 24'b1:24'b0 ,l[7:0]};
+                  b = {l[7]? {24{l[7]}}:24'b0 ,l[7:0]};
             3'b001: //lh
-                  b = {l[31]? 16'b1:16'b0 ,l[15:0]};
+                  b = {l[15]? {16{l[15]}}:16'b0 ,l[15:0]};
             3'b010: //lw
-                  b = mem[a]; 
+                  b = l; 
             3'b100: //lbu
                   b = {24'b0 ,l[7:0]};
             3'b101: //lhu
@@ -35,10 +35,12 @@ module datamemory#(
             endcase 
 
             rd = b;
+            
+        end
 	end
     
     always @(posedge clk) begin
-       if (MemWrite)
+       if (MemWrite) begin
             case(funct3)
             3'b000: //sb
                s = wd[7:0]; 
@@ -48,6 +50,7 @@ module datamemory#(
                 s = wd; 
             endcase
             mem[a] = s;
+        end
     end
     
 endmodule
